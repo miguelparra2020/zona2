@@ -2,8 +2,9 @@ import React from "react";
 import MainLayout from '../../components/layouts/MainLayout';
 import { getFichas } from '../../db/db';
 import { useState, useEffect } from "react";
+import Link from "next/link";
 
-const FichasPage = () => {
+function FichasPage(){
     const [fichas, setFichas] = useState([]);
 
     useEffect(() => {
@@ -24,6 +25,9 @@ const FichasPage = () => {
         <MainLayout>
             <div>
                 <h1>Hola soy Fichas</h1>  
+            </div>
+            <div>
+                <h3><Link href="/fichas/nueva">Crear ficha</Link></h3>  
             </div>
             <div>
                 {fichas.map((ficha) => (
