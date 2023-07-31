@@ -6,7 +6,7 @@ import Link from "next/link";
 
 function FichasPage(){
     const [fichas, setFichas] = useState([]);
-
+    
     useEffect(() => {
         async function fetchFichas() {
             try {
@@ -20,6 +20,7 @@ function FichasPage(){
 
         fetchFichas();
     }, []);
+    
 
     return (
         <MainLayout>
@@ -30,12 +31,21 @@ function FichasPage(){
                 <h3><Link href="/fichas/nueva">Crear ficha</Link></h3>  
             </div>
             <div>
-                {fichas.map((ficha) => (
-                    <div key={ficha.url}>
-                        <p>Número de ficha: {ficha.numero_ficha}</p>
-                        <p>Nombre de ficha: {ficha.nombre_ficha}</p>
-                    </div>
-                ))}
+            {fichas.map((ficha) => {
+    // Extraer el ID de la URL
+    const urlParts = ficha.url.split('/');
+    const id = urlParts[urlParts.length - 2]; // Suponemos que el ID está antes del último slash
+
+    return (
+        <div key={ficha.url}>
+            <p>Id: {id}</p>
+            <p>Número de ficha: {ficha.numero_ficha}</p>
+            <p>Nombre de ficha: {ficha.nombre_ficha}</p>
+            <Link href={`/fichas/${id}`}>Editar</Link>
+        </div>
+    );
+})}
+
             </div>
         </MainLayout>
     )

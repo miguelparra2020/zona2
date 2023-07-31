@@ -27,6 +27,11 @@ const NavbarMain = () => {
         </Link>
       </div>
       <div>
+        <Link href="https://miguelpaez9612.pythonanywhere.com/admin/" target='_blank'>     
+            <div>Administración</div>
+        </Link>
+      </div>
+      <div>
         <Link href="/">     
             <div>Salir</div>
         </Link>

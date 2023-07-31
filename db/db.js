@@ -12,7 +12,7 @@ export async function getFichas() {
 //Created 🆕
 //Función para crear una fichas
 
-export async function createFicha(fichaData) {
+export async function CreateFicha(fichaData) {
   const response = await fetch('http://miguelpaez9612.pythonanywhere.com/fichas/', {
     method: 'POST',
     headers: {
@@ -27,7 +27,7 @@ export async function createFicha(fichaData) {
 
 //del CRUD - fichas
 //Read 👀
-//Función para obtener todos los datos de lectura de un producto especifico
+//Función para obtener todos los datos de lectura de una ficha especifica
 export async function getFicha(id) {
     const response = await fetch(`http://miguelpaez9612.pythonanywhere.com/fichas/${id}/`);
     const data = await response.json();
@@ -36,14 +36,14 @@ export async function getFicha(id) {
 
 //del CRUD - fichas
 //Updated 😮‍💨
-//Función para obtener actualizar todos los datos de un producto de la base de datos es un Updated 
-export async function updateProduct(id, updatedProduct) {
+//Función para obtener actualizar todos los datos de una ficha de la base de datos es un Updated 
+export async function updateFicha(id, updatedFicha) {
     const response = await fetch(`http://miguelpaez9612.pythonanywhere.com/fichas/${id}/`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(updatedProduct),
+      body: JSON.stringify(updatedFicha),
     });
   
     const data = await response.json();
@@ -52,8 +52,8 @@ export async function updateProduct(id, updatedProduct) {
 
 //del CRUD - fichas
 //Delete ❌
-//Función para eliminar un producto según el ID
-export async function deleteProduct(id) {
+//Función para eliminar una ficha según el ID
+export async function deleteFicha(id) {
     const response = await fetch(`http://miguelpaez9612.pythonanywhere.com/fichas/${id}/`, {
       method: 'DELETE',
     });
@@ -61,6 +61,7 @@ export async function deleteProduct(id) {
     if (response.ok) {
       return { success: true };
     } else {
-      throw new Error('Failed to delete product');
+      throw new Error('Error al eliminar una ficha');
     }
 }
+
