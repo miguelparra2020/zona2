@@ -2,6 +2,7 @@
 import React from 'react';
 import NavbarLandPage from '../NavbarLandPage';
 import FooterLandPage from '../FooterLandPage';
+import '../../public/styles/layouts/LandPageLayout.css';
 
 const HomeLayout = ({ children }) => {
   return (

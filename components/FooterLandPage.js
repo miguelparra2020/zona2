@@ -1,6 +1,6 @@
 // components/Navbar.js
 import React from 'react';
-import '../public/styles/FooterLandPage.css'
+import '../public/styles/FooterLandPage.css';
 
 const FooterLandPage = () => {
   return (
