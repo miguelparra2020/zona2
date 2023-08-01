@@ -7,9 +7,6 @@ const NavbarLandPage = () => {
     <nav>
       <div>
         <Link href="/">
-            <h1>Cambio</h1>
-            <div>Img</div>
-            <span>Biometric Services</span>
           
         </Link>
       </div>
