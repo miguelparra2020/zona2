@@ -20,12 +20,12 @@ const NavbarLandPage = () => {
             </div>
             
             <div className="nav__links">
-                <a href="" className="nav__link">
+                <Link href="" className="nav__link">
                     Iniciar sesión
-                </a>
-                <a href="/" className="nav__link nav__link--activate">
+                </Link>
+                <Link href="/" className="nav__link nav__link--activate">
                     Registrarse
-                </a>
+                </Link>
             </div>
         </nav>
         </div>
