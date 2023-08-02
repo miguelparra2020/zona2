@@ -15,7 +15,7 @@ const NavbarLandPage = () => {
         </Link>
         <div className="header">
         <nav className="nav">
-            <img src="public/images/logo_negro2.png" alt="" className="nav__img"></img>
+            {/* <img src="public/images/logo_negro2.png" alt="" className="nav__img"></img> */}
             <div className="nav__links">
                 <a href="" className="nav__link">
                     Iniciar sesión
