@@ -16,7 +16,8 @@ const NavbarLandPage = () => {
         <div className="header">
         <nav className="nav">
             <div>
-            <Image src="/img/logo_negro2.png" alt="Logosímbolo SENA Negro" className="nav__img"/>
+            <Image src="/img/logo_negro2.png" alt="Logosímbolo SENA Negro" className="nav__img"
+            width={120} height={60}/>
             </div>
             
             <div className="nav__links">
