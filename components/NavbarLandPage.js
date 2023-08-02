@@ -1,6 +1,7 @@
 // components/Navbar.js
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const NavbarLandPage = () => {
   return (
@@ -15,7 +16,7 @@ const NavbarLandPage = () => {
         <div className="header">
         <nav className="nav">
             <div>
-            <img src="/img/logo_negro2.png" alt="Logosímbolo SENA Negro" className="nav__img"/>
+            <Image src="/img/logo_negro2.png" alt="Logosímbolo SENA Negro" className="nav__img"/>
             </div>
             
             <div className="nav__links">
