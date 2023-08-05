@@ -8,7 +8,7 @@ const NavbarLandPage = () => {
   return (
     <header className={styles.header}>
       <nav className={styles.nav}>
-        <Image src="/img/logo_negro2.png" alt="Logo Símbolo SENA y Biometric Service Negro" className={styles.nav__img} width={100} height={90}/>
+        <Image className={styles.nav__img} src="/img/logo_negro2.png" alt="Logo Símbolo SENA y Biometric Service Negro" width={300} height={90}/>
 
         {/* Contenedor de links  */}
         <div className={styles.nav__links}>

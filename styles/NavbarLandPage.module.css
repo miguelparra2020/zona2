@@ -16,14 +16,23 @@
     height: 6.25rem;  /* height: 80px */
     height: 80px;
     margin: 0 80px; /* margin: 0 10px; */
+    background: none;
+}
+
+.nav__img {
+    width: auto;
+    height: 80px; /* height: 100px; */
+    background: none;
 }
 
 
 .nav__links {
     padding: 20px 0;
+    background: none;
 }
 
 .nav__link {
+    background: none;
     color: #333;
     border: none;
     outline: none;
