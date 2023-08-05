@@ -12,7 +12,6 @@ const LoginPage = () => {
         <div>Contraseña</div>
         <div><Link href="/home">Ingresar</Link></div>
         <div><Link href="/recuperar-password">Ovidó Contraseña</Link></div>
-        
       </div>
     </LoginLayout>
   );
