@@ -1,10 +1,10 @@
 .main {
-    margin-top: 80px;
+    margin-top: 5rem;/* 80px */
 }
 
 .section {
     display: flex;
-    margin: 0 0 80px 0; /* margin: 0 10px; */
+    margin: 0 0 5rem 0; /* 80px; */
     align-items: center;
     justify-content: center;
 }
@@ -18,13 +18,12 @@
 .section__title {
     text-align: left;
     font-weight: 700;
-    font-size: 4.375em;
-    /* Equivale a 70px */
+    font-size: 4.375em;/* Equivale a 70px */
 }
 
 .section__p {
     font-weight: 500;
-    font-size: 20px;
+    font-size: 1.25em;/* =20px  */
 }
 
 .section__img {
@@ -52,7 +51,7 @@
     border-radius: 40px;
 }
 
-.card {
+.card__section {
     background-color: #C3E5B2;
     padding: 40px 40px;
     border-radius: 10px;

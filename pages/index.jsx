@@ -24,22 +24,22 @@ const LandPage = () => {
         <h1 className={styles.h1__info}>Enfocado en aprendices e instructores</h1>
         {/* ======= Sección Tarjetas de información ========= */}
         <section className={styles.section__cards}>
-          <div className={styles.card}>
+          <div className={styles.card__section}>
             <h2 className={styles.card__title}>Aprendiz</h2>
             <h3 className={styles.card__subtitle}>Comunicación efectiva</h3>
             <p className={styles.card__description}>Comunica tus inconvenientes fácilmente. Anexa excusas, el instructor  las valida, garantizando que puedas continuar con confianza.</p>
           </div>
-          <div className={styles.card}>
+          <div className={styles.card__section}>
             <h2 className={styles.card__title}>Aprendiz</h2>
             <h3 className={styles.card__subtitle}>Control de asistencia</h3>
             <p className={styles.card__description}>Verifica tu asistencia al instante desde la plataforma y descárguela en PDF para un seguimiento sin complicaciones</p>
           </div>
-          <div className={styles.card}>
+          <div className={styles.card__section}>
             <h2 className={styles.card__title}>Aprendiz</h2>
             <h3 className={styles.card__subtitle}>Comunicación efectiva</h3>
             <p className={styles.card__description}>Comunica tus inconvenientes fácilmente. Anexa excusas, el instructor  las valida, garantizando que puedas continuar con confianza.</p>
           </div>
-          <div className={styles.card}>
+          <div className={styles.card__section}>
             <h2 className={styles.card__title}>Aprendiz</h2>
             <h3 className={styles.card__subtitle}>Comunicación efectiva</h3>
             <p className={styles.card__description}>Comunica tus inconvenientes fácilmente. Anexa excusas, el instructor  las valida, garantizando que puedas continuar con confianza.</p>
