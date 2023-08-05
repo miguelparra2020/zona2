@@ -14,13 +14,14 @@
 .section__texts {
     padding: 0rem 90px 0 80px;
     margin-bottom: 6rem;
-    background-color: brown;
+    background: none;
 }
 
 .section__title {
     text-align: left;
     font-weight: 700;
-    font-size: 50px;
+    font-size: 4.375em;
+    /* Equivale a 70px */
 }
 
 .section__p {
@@ -33,3 +34,4 @@
     height: 31rem;/* 500px; */
 }
 
+/* ======= Sección Tarjetas de información ========= */

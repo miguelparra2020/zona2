@@ -21,6 +21,13 @@ const LandPage = () => {
             <Image className={styles.section__img} src="/img/maqueta.png" alt="Logo Símbolo SENA y Biometric Service Negro" width={1000} height={670}/>
           </div>
         </section>
+        {/* ======= Sección Tarjetas de información ========= */}
+        <section className={styles.section__cards}>
+          <div className={styles.card}>
+            <h2 className={styles.card__title}>Aprendiz</h2>
+            <h3 className={styles.card__subtitle}>Comunicación efectiva</h3>
+          </div>
+        </section>
       </main>
     </LandPageLayout>
   );
