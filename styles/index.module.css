@@ -103,4 +103,11 @@
     .main {
         margin-top: 15rem;/* 80px */
     }
+    .section__texts {
+        width: 100%;
+    }
+    .section__mockup {
+        width: 100%;
+    }
+
 }
