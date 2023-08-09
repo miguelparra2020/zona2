@@ -4,9 +4,11 @@
 
 .section {
     display: flex;
+    flex-direction: row;
     margin: 0 0 5rem 0; /* 80px; */
     align-items: center;
     justify-content: center;
+    flex-wrap:wrap;
 }
 
 .section__texts {
