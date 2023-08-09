@@ -28,7 +28,7 @@
 .nav__links {
     margin: 10px;  
     width: 70%;
-    background: none;
+    background: green;
 }
 
 .nav__link {
