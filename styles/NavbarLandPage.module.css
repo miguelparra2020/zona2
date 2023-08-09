@@ -19,7 +19,7 @@
 
 .nav__img {
     margin: 10px;
-    width: auto;
+    width: 30%;
     height: 5rem;
     background: none;
 }
@@ -27,7 +27,7 @@
 
 .nav__links {
     margin: 10px;  
-    width: 200px;
+    width: 70%;
     background: none;
 }
 
