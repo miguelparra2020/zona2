@@ -51,6 +51,7 @@
     -o-border-radius: 3.125rem;
 }
 
+
 .nav__link--activate {
     background-color: #39A900;
     color: #fff;
@@ -61,6 +62,12 @@
     background-color: #006E3C;
     color: #fff;
     border: none;
+}
+
+@media (max-width: 750px){
+    .nav__link {
+         font-size: 2em;
+    }
 }
 
 
