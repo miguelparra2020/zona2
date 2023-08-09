@@ -89,3 +89,9 @@
     font-size: 1.125em;
     text-align: justify;
 }
+
+@media (max-width: 750px){
+    .main {
+        margin-top: 10rem;/* 80px */
+    }
+}
