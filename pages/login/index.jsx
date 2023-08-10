@@ -2,10 +2,14 @@
 import React from 'react';
 import  LoginLayout from '../../components/layouts/LoginLayout';
 import Link from 'next/link';
+// Nota: Siempre importar etiquetas raras
+// import Image from 'next/image';
+// import styles from '@/styles/login.module.css';
 
 const LoginPage = () => {
   return (
     <LoginLayout>
+      {/* className={styles.} */}
       <div>
         <h1>Bienvenido a la página Login</h1>
         <div>Usuario</div>
