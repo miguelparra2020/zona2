@@ -1,3 +1,117 @@
-.header {
-    background-color: yellow;
+.main {
+    background-color: #FBFBE2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 3rem;
+    padding-bottom: 8rem;
+}
+
+.tarjeta {
+    background-color: #001629;
+    color: white;
+    padding: 1rem 3.3rem;
+    border-radius: 1rem;
+    border: solid 4px;
+    border-color: #668494;
+    transition: 0.5s ease-out;
+    overflow: visible;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+}
+
+.tarjeta:hover {
+    border-color: #82DEF0;
+    box-shadow:  20px 20px 60px #bebebe,
+    -20px -20px 60px #ffffff;
+}
+
+/* .contenido-tarjeta {
+    background-color: rebeccapurple;
+} */
+.h1 {
+    padding: .7rem 0.125rem;
+    font-size: 1.7em;
+    font-weight: 700;
+    text-align: center;
+}
+
+.h2 {
+    font-size: 1.3em;
+    font-weight: 400;
+    padding: 2px 2px;
+    text-align: center;
+}
+
+.h3 {
+    padding: 0.625rem 0.125px;
+    font-size: 1.126em;
+    font-weight: 300;
+}
+
+.input {
+    padding: 0.125rem 0.125rem 0.063rem 0.563rem;
+    width: 15rem;
+    height: 1.563rem;
+    border-radius: 0.625rem;
+    border: none;
+    font-size: 1.120em;
+    border-radius: 3.125rem;
+    border: 2.5px solid #668494;
+    outline: 0;
+    background-color: #fff;
+    color: #000;
+    -webkit-border-radius: 3.125rem;
+    -moz-border-radius: 3.125rem;
+    -ms-border-radius: 3.125rem;
+    -o-border-radius: 3.125rem;
+}
+
+.input:focus {
+    border-color: #82DEF0;
+}
+
+.button {
+    border-radius: 1.25rem;
+}
+
+.h4 {
+    padding: 0.625rem 2px;
+}
+
+.a{
+    
+    text-decoration: underline;
+    color: #fff;
+    font-weight: 300;
+    transition: 0.3s ease-out;
+    overflow: visible;
+}
+
+.a:hover{
+    color: #82DEF0;
+    font-weight: 300;
+}
+
+.button {
+    padding: 0.625rem 2.5rem;
+    margin: 1rem 3rem;
+    align-items: center;
+    background-color: #39A900;
+    color: #fff;
+    border: solid 2px #39A900;
+    font-weight: 500;
+    font-size: 1.126em;
+    transition: 0.3s ease-out;
+    overflow: visible;
+}
+
+.button:hover{
+    align-items: center;
+    background-color: #008550;
+    border: solid 2px #008550;
+    color: #fff;
+    cursor: pointer;
 }
