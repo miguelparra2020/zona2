@@ -20,7 +20,7 @@ const LoginPage = () => {
             <h3 className={styles.h3}>Contraseña:</h3>
             <input className={styles.input} type="password"/>
             <h4 className={styles.h4}>
-              <Link href="/Login" className={styles.a}>Has olvidado la contraseña</Link>
+              <Link href="/recuperar-password" className={styles.a}>Has olvidado la contraseña</Link>
             </h4>
             
             <Link href="/home"><button className={styles.button}>Ingresar</button></Link>
