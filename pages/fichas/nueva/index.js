@@ -51,8 +51,7 @@ function NuevaFichaPage() {
             <h3><Link href="/fichas">Volver</Link></h3>
         </div>
         <div>
-            <h1>Hola soy crear una nueva ficha</h1>
-            
+            <h1>Crear ficha</h1>
         </div>
         <div>
             <form onSubmit={handleSubmit}>
