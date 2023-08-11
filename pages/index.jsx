@@ -18,7 +18,7 @@ const LandPage = () => {
                 <h1 className={styles.section__title}>Biometric Service</h1>
               </div>
               <div className={styles.container__p}>
-                "Lleve un control exhaustivo de su asistencia mientras inculca el hábito de llegar a tiempo."
+              &quot;Lleve un control exhaustivo de su asistencia mientras inculca el hábito de llegar a tiempo.&quot;
               </div>
             </div>
           </div>
