@@ -9,17 +9,22 @@ const NavbarLandPage = () => {
     <header className={styles.header}>
       <nav className={styles.nav}>
         <div className={styles.nav__img}>
-          <Image  src="/img/logo_negro2.png" alt="Logo Símbolo SENA y Biometric Service Negro" width={300} height={90}/>
+          <div className={styles.div_img}>
+            <Image  src="/img/logo_negro2.png" alt="Logo Símbolo SENA y Biometric Service Negro" width={300} height={90} className={styles.img_logo} />
+          </div>        
         </div>
         {/* Contenedor de links  */}
         <div className={styles.nav__links}>
-          {/* Links a las páginas */}
-          <Link href="/login" className={styles.nav__link}>
+          <div className={styles.content_nav__links}>
+            <Link href="/login" className={styles.nav__link}>
             Iniciar sesión
           </Link>
           <Link href="/login" className={`${styles.nav__link} ${styles['nav__link--activate']}`}>
             Registrarse
           </Link>
+          </div>
+          {/* Links a las páginas */}
+          
         </div>
       </nav>
     </header>
