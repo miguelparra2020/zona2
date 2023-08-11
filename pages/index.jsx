@@ -10,14 +10,27 @@ const LandPage = () => {
     <LandPageLayout>
       <main className={styles.main}>
       {/* className={styles.} */}
+      <div className={styles.container_nav_back}></div>
         <section className={styles.section}>
           <div className={styles.section__texts}>
-            {/* Título  */}
-            <div className={styles.container__title}>
-            <h1 className={styles.section__title}>Biometric Service</h1>
+            <div className={styles.section__texts_margin}>
+              <div className={styles.content_section__title}>
+                <h1 className={styles.section__title}>Biometric Service</h1>
+              </div>
+              <div className={styles.container__p}>
+                "Lleve un control exhaustivo de su asistencia mientras inculca el hábito de llegar a tiempo."
+              </div>
             </div>
+          </div>
+          <div className={styles.section__mockup}>
+          <Image className={styles.section__img} src="/img/maqueta.png" alt="Logo Símbolo SENA y Biometric Service Negro" width={1000} height={670}/>
+          </div>
+            {/* Título  */}
+            {/* <div className={styles.container__title}>
+            
+            </div> */}
             {/* Parrafo  */}
-            <div className={styles.container__p} >
+            {/* <div className={styles.container__p} >
               <p className={styles.section__p}> 
                       Lleve un control exhaustivo de su asistencia mientras inculca el hábito de llegar a tiempo.
               </p>
@@ -25,7 +38,7 @@ const LandPage = () => {
           </div>
           <div className={styles.section__mockup}>
             <Image className={styles.section__img} src="/img/maqueta.png" alt="Logo Símbolo SENA y Biometric Service Negro" width={1000} height={670}/>
-          </div>
+          </div> */}
         </section>
         <h1 className={styles.h1__info}>Enfocado en aprendices e instructores</h1>
         {/* ======= Sección Tarjetas de información ========= */}
