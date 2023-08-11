@@ -25,26 +25,20 @@ const LandPage = () => {
           <div className={styles.section__mockup}>
           <Image className={styles.section__img} src="/img/maqueta.png" alt="Logo Símbolo SENA y Biometric Service Negro" width={1000} height={670}/>
           </div>
-            {/* Título  */}
-            {/* <div className={styles.container__title}>
-            
-            </div> */}
-            {/* Parrafo  */}
-            {/* <div className={styles.container__p} >
-              <p className={styles.section__p}> 
-                      Lleve un control exhaustivo de su asistencia mientras inculca el hábito de llegar a tiempo.
-              </p>
-            </div>
-          </div>
-          <div className={styles.section__mockup}>
-            <Image className={styles.section__img} src="/img/maqueta.png" alt="Logo Símbolo SENA y Biometric Service Negro" width={1000} height={670}/>
-          </div> */}
         </section>
         <h1 className={styles.h1__info}>Enfocado en aprendices e instructores</h1>
         {/* ======= Sección Tarjetas de información ========= */}
         <section className={styles.section__cards}>
+          <section className={styles.container_section__cards}>
+            <div className={styles.first__container}>
+            
+            </div>
+            <div className={styles.second__container}>
+              
+            </div>
+          </section>
           {/* ============= Cartas ========== */}
-          <div className={styles.first__container}>
+          {/* <div className={styles.first__container}>
             <div className={styles.card__left__blue}>
 
               <h2 className={styles.card__title}>Aprendiz</h2>
@@ -72,7 +66,7 @@ const LandPage = () => {
             <h2 className={styles.card__title}>Aprendiz</h2>
             <h3 className={styles.card__subtitle}>Comunicación efectiva</h3>
             <p className={styles.card__description}>Comunica tus inconvenientes fácilmente. Anexa excusas, el instructor  las valida, garantizando que puedas continuar con confianza.</p>
-          </div>
+          </div> */}
         </section>
       </main>
     </LandPageLayout>
