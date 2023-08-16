@@ -23,7 +23,7 @@
 
 
 .nav__link {
-    margin: 0 10px 0 0;
+    margin: 0 30px 0 0;
     padding: 10px 30px;
     font-size: 20px;
     font-weight: 500;
@@ -42,7 +42,7 @@
     border-color:  #39A900;
     background-color: #39A900;
     margin-right: 0;
-    padding: 10px 20px;
+    padding: 10px 15px;
 }
 
 .nav__link:hover {
@@ -62,7 +62,6 @@
         align-items: center;
         justify-content:center;
     }
-
     
     .container__links{
         padding: 0 0 5px 0;
