@@ -1,16 +1,42 @@
 .footer {
     font-family: 'Work Sans';
     background-color: #001629;
-    width: 100%;
+    color: #fff;
+    /* width: 100%;
     height: 200px;
     display: flex;
     align-items: center;
-    justify-content: center;
-}
+    justify-content: center; */
+} 
 
 .footer__p {
     font-weight: 400;
     font-size: 1.2em;
     color: #fff;
     background-color: #001629;
+} 
+
+.divfirst {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 70px;
+}
+.containertwo {
+    padding-right: 200px;
+}
+
+.containertwo__p {
+    font-size: 1em;
+}
+.container__img {
+    width: auto;
+    height: 100px;
+}
+
+.containerfour__img {
+    width: auto;
+    height: 30px;
+    margin-left: 10px;
+
 }
