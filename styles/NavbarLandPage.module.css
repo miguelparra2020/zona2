@@ -1,6 +1,6 @@
 .header {
     width: 100%;
-    top: 0;
+    min-height: 90px;
     position: fixed;
     /* From https://css.glass */
     background: rgba(251, 251, 226, 0.9);
@@ -13,46 +13,16 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 100%;
-    height: 5rem;
+    margin: 0 70px;
 }
 
 .nav__img {
-    width: 30%;
-    height: 5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: auto;
+    height: 90px;
 }
 
-.div_img{
-    width: 60%;
-    height: 4rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.img_logo{
-    overflow: hidden;
-}
-
-.nav__links {
-    width: 70%;
-    height: 5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.content_nav__links{
-    width: 80%;
-    height: 4rem;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
-
-.nav__link {
-    background: none;
+/* .nav__link {
+    background-color: darkorange;
     color: #333;
     border: none;
     outline: none;
@@ -60,59 +30,63 @@
     font-size: 1.25em;
     font-weight: 600;
     padding: 0.625rem 1.25rem;
-    /*10px20px*/margin-left: 1.4rem;
-    border-radius: 3.125rem;
-    /*50px*/
-    cursor: pointer;
+    margin-left: 1.4rem;
+    /*10px20px*
+    /*50pxcursor: pointer;
     text-decoration: none;
     transition: background-color 0.2s ease-in-out;
-    -webkit-border-radius: 3.125rem;
-    -moz-border-radius: 3.125rem;
-    -ms-border-radius: 3.125rem;
-    -o-border-radius: 3.125rem;
+    -webkit-border-radius:;
+    -moz-border-radius:;
+    -ms-border-radius:;
+    -o-border-radius:;
+}
+ */ 
+
+.nav__link {
+    margin: 0 10px 0 0;
+    padding: 10px 30px;
+    font-size: 20px;
+    font-weight: 500;
+    color: #000b18;
+    text-decoration: none;
+    border-radius: 80px ;
+    -webkit-border-radius: 80px ;
+    -moz-border-radius: 80px ;
+    -ms-border-radius: 80px ;
+    -o-border-radius: 80px ;
 }
 
-
 .nav__link--activate {
+    color: #FBFBE2;
+    border-color:  #39A900;
     background-color: #39A900;
-    color: #fff;
-    border: none;
+    margin-right: 0;
 }
 
 .nav__link:hover {
-    background-color: #006E3C;
-    color: #fff;
-    border: none;
+    color: #FBFBE2;
+    background-color: #39A900;
+    border-color:  #39A900;
 }
 
-@media (max-width: 750px){
+@media (max-width: 640px) {
     .nav {
-        height: 8rem;
+        display: block;
+        margin: 0 10px;
     }
-    .nav__img{
-        width: 24%;
-        height: 8rem;
+
+    .nav__a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
-    .div_img{
-        width: 90%;
-        height: 3rem; 
-    } 
-    .img_logo{
-        width: 100%;
-        height: 3.5rem;
+    .container__links{
+        padding: 10px 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
-    .nav__link {
-        font-size: 1.4rem;
-    }
-    /* hola mundo */
-    .nav__links {
-        width: 76%;
-        height: 8rem;
-    }
-    .content_nav__links{
-        width: 96%;
-        height: 6rem;
-    }
+
 }
 
 

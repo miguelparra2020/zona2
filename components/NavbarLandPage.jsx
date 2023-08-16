@@ -6,26 +6,22 @@ import styles from '../styles/NavbarLandPage.module.css';
 
 const NavbarLandPage = () => {
   return (
+    // Encabezado
     <header className={styles.header}>
       <nav className={styles.nav}>
-        <div className={styles.nav__img}>
-          <div className={styles.div_img}>
-            <Image  src="/img/logo_negro2.png" alt="Logo Símbolo SENA y Biometric Service Negro" width={300} height={90} className={styles.img_logo} />
-          </div>        
-        </div>
-        {/* Contenedor de links  */}
-        <div className={styles.nav__links}>
-          <div className={styles.content_nav__links}>
-            <Link href="/login" className={styles.nav__link}>
-            Iniciar sesión
+          {/* Contenedor img */}
+          <Link href="index.jsx" className={styles.nav__a}>
+            <Image  src="/img/logo_negro.png" alt="Logo Símbolo SENA Biometric Service Negro" width={468} height={209} className={styles.nav__img} />
           </Link>
-          <Link href="/login" className={`${styles.nav__link} ${styles['nav__link--activate']}`}>
-            Registrarse
-          </Link>
+          {/* Contenedor de links  */}
+          <div className={styles.container__links}>
+              <Link href="/login" className={styles.nav__link}>
+              Acceder
+              </Link>
+              <Link href="/login" className={`${styles.nav__link} ${styles['nav__link--activate']}`}>
+              Registrarse
+              </Link>
           </div>
-          {/* Links a las páginas */}
-          
-        </div>
       </nav>
     </header>
 
