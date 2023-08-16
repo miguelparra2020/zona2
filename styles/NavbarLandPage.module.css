@@ -24,12 +24,13 @@
 
 .nav__link {
     margin: 0 10px 0 0;
-    padding: 10px 20px;
+    padding: 10px 30px;
     font-size: 20px;
     font-weight: 500;
     color: #000b18;
     text-decoration: none;
     border-radius: 80px ;
+    border: solid 2px #39A900;
     -webkit-border-radius: 80px ;
     -moz-border-radius: 80px ;
     -ms-border-radius: 80px ;
@@ -41,6 +42,7 @@
     border-color:  #39A900;
     background-color: #39A900;
     margin-right: 0;
+    padding: 10px 20px;
 }
 
 .nav__link:hover {
@@ -58,12 +60,10 @@
     .nav__a {
         display: flex;
         align-items: center;
-        justify-content:left;
+        justify-content:center;
     }
 
-    .nav__img {
-        margin-left: 60px;
-    }
+    
     .container__links{
         padding: 0 0 5px 0;
         display: flex;
