@@ -1,0 +1,17 @@
+.nav {
+    background-color: lightgreen;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.nav__link {
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 800;
+    color: black;
+}
+
+.nav__link:hover {
+    color: darkgreen;
+}
