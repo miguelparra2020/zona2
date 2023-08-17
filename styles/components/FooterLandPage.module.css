@@ -1,15 +1,92 @@
 .footer {
     font-family: 'Work Sans';
-    background-color: #001629;
+    background-color: #00324D;
     color: #fff;
-    /* width: 100%;
-    height: 200px;
-    display: flex;
-    align-items: center;
-    justify-content: center; */
 } 
 
-.footer__p {
+
+.divfirst {
+    margin: 0 70px;
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container__img {
+    width: auto;
+    height: 100px;
+}
+
+.containertwo {
+    display: block;
+    width: 300px;
+}
+
+
+.containertwo__h2 {
+    font-size: 25px;
+    font-weight: 600;
+    padding-bottom: 5px;
+}
+
+.containertwo__p {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.containerthree {
+    display: block;
+}
+.containerthree__h2{
+    font-size: 25px;
+    font-weight: 600;
+    padding-bottom: 5px;
+}
+.containerthree__link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.containerthree__link:hover {
+    color: #82DEF0;
+}
+
+
+.containerfour__h2 {
+    font-size: 25px;
+    font-weight: 600;
+    padding-bottom: 10px;
+}
+
+.containerfour__img {
+    width: auto;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.containerfour__img:hover {
+    width: auto;
+    height: 31px;
+}
+
+
+/* Subfooter */
+.divsecond {
+    width: 100;
+    background-color: #001629;
+}
+
+.divsecond__p {
+    text-align: center;
+    padding: 20px;
+    font-size: 18px;
+    font-weight: 200;
+}
+
+/* .footer__p {
     font-weight: 400;
     font-size: 1.2em;
     color: #fff;
@@ -30,20 +107,28 @@
     font-size: 1em;
 }
 .container__img {
-    width: auto;
-    height: 100px;
-}
-
-.containerfour__img {
-    width: auto;
-    height: 30px;
-    margin-left: 10px;
 
 }
+*/
 
 @media (max-width: 640px) {
     .divfirst {
         display: block;
-        margin: 0 10px;
+        margin: 0 20px;
     }
-}
+
+    .containerone {
+        margin-bottom: 10px;
+    }
+
+    .containertwo {
+        margin-bottom: 20px;
+    }
+
+    .containerthree {
+        margin-bottom: 20px;
+
+    }
+
+
+} 

@@ -26,15 +26,17 @@ const FooterLandPage = () => {
                   Línea gratuita nacional
                   018000 91027270
                 </p>
+                
               </div>
               <div className={styles.containerthree}>
-                <h2>
+                <h2 className={styles.containerthree__h2}>
                   Sobre nosotros
                 </h2>
-                <Link href="/Login">
+                <Link href="/Login" className={styles.containerthree__link}>
                   Terminsos
                 </Link>
-                <Link href="/Login">
+                <br />
+                <Link href="/Login" className={styles.containerthree__link}>
                 Política de privacidad
                 </Link>
               </div>
@@ -42,10 +44,10 @@ const FooterLandPage = () => {
                 <h2 className={styles.containerfour__h2}>
                   Síquenos
                 </h2>
-                  <Link href="/Login"className={styles.container__link}>
+                  <Link href="/Login"className={styles.containerfour__link}>
                     <Image  src="/img/facebook.png" alt="Logo Facebook Blanco" width={80} height={80} className={styles.containerfour__img}/>
                   </Link>
-                  <Link href="/Login" className={styles.container__link}>
+                  <Link href="/Login" className={styles.containerfour__link}>
                     <Image  src="/img/instagram.png" alt="Logo Instagram Blanco" width={100} height={80} className={styles.containerfour__img}/>
                   </Link>
               </div>
