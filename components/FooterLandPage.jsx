@@ -1,10 +1,9 @@
 // components/Navbar.js
 import React from 'react';
-import styles from '@/styles/components/FooterLandPage.module.css';
-import '../styles/global.css';
-
 import Link from 'next/link';
 import Image from 'next/image';
+import styles from '@/styles/components/FooterLandPage.module.css';
+import '../styles/global.css';
 
 const FooterLandPage = () => {
   return (
@@ -33,7 +32,7 @@ const FooterLandPage = () => {
                   Sobre nosotros
                 </h2>
                 <Link href="/Login" className={styles.containerthree__link}>
-                  Terminsos
+                  Terminos
                 </Link>
                 <br />
                 <Link href="/Login" className={styles.containerthree__link}>
@@ -42,7 +41,7 @@ const FooterLandPage = () => {
               </div>
               <div className={styles.containerfour}>
                 <h2 className={styles.containerfour__h2}>
-                  Síquenos
+                  Síguenos
                 </h2>
                   <Link href="/Login"className={styles.containerfour__link}>
                     <Image  src="/img/facebook.png" alt="Logo Facebook Blanco" width={80} height={80} className={styles.containerfour__img}/>
@@ -58,12 +57,6 @@ const FooterLandPage = () => {
             </p>
           </div>
         </footer>
-        {/* <footer className={styles.footer}>
-          <p className={styles.footer__p}>
-              Todos los derechos reservados
-              Copyright © 2023 - SENA CDIT / ADSO - 2465417
-          </p>
-        </footer> */}
       </div>
   );
 };
