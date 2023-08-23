@@ -74,13 +74,11 @@
 /* ============== Tarjetas ============= */
 
 .sectioncards {
-    background-color: #00324D;
     margin: 0 70px;
 }
 
 
 .containerone {
-    background-color: #99f36c;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -99,14 +97,24 @@
 }
 
 .containerthree {
-    background-color: #50773c;
+    /* background-color: #50773c; */
     display: flex;
     justify-content: left;
 
 }
 
+.card__title {
+    font-weight: 800;
+}
 
 
+.cardone--blue {
+    background-color: #00324D;
+}
+
+.cardone--green {
+    background-color: #008550;
+}
 
 /* flex-wrap: wrap; */
 .card__left__blue {
