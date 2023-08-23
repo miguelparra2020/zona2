@@ -27,46 +27,43 @@ const LandPage = () => {
           </div>
         </section>
         <h1 className={styles.h1__info}>Enfocado en aprendices e instructores</h1>
-        {/* ======= Sección Tarjetas de información ========= */}
-        <section className={styles.section__cards}>
-          <section className={styles.container_section__cards}>
-            <div className={styles.first__container}>
-            
-            </div>
-            <div className={styles.second__container}>
-              
-            </div>
-          </section>
-          {/* ============= Cartas ========== */}
-          {/* <div className={styles.first__container}>
-            <div className={styles.card__left__blue}>
 
+        {/* =================== Sección Tarjetas de información ================ */}
+        <section className={styles.sectioncards}>
+          <div className={styles.containerone}>
+            <div className={styles.cardone}>
               <h2 className={styles.card__title}>Aprendiz</h2>
               <h3 className={styles.card__subtitle}>Comunicación efectiva</h3>
               <p className={styles.card__description}>Comunica tus inconvenientes fácilmente. Anexa excusas, el instructor  las valida, garantizando que puedas continuar con confianza.</p>
             </div>
-            <div className={styles.card__right__green}>
+            <div className={styles.cardone}>
               <h2 className={styles.card__title}>Aprendiz</h2>
-              <h3 className={styles.card__subtitle}>Control de asistencia</h3>
-              <p className={styles.card__description}>Verifica tu asistencia al instante desde la plataforma y descárguela en PDF para un seguimiento sin complicaciones</p>
+              <h3 className={styles.card__subtitle}>Comunicación efectiva</h3>
+              <p className={styles.card__description}>Comunica tus inconvenientes fácilmente. Anexa excusas, el instructor  las valida, garantizando que puedas continuar con confianza.</p>
             </div>
           </div>
-          
-          <div className={styles.card__right__green}>
-            <h2 className={styles.card__title}>Aprendiz</h2>
-            <h3 className={styles.card__subtitle}>Comunicación efectiva</h3>
-            <p className={styles.card__description}>Comunica tus inconvenientes fácilmente. Anexa excusas, el instructor  las valida, garantizando que puedas continuar con confianza.</p>
+
+          <div className={styles.containerone}>
+            <div className={styles.cardone}>
+                <h2 className={styles.card__title}>Aprendiz</h2>
+                <h3 className={styles.card__subtitle}>Comunicación efectiva</h3>
+                <p className={styles.card__description}>Comunica tus inconvenientes fácilmente. Anexa excusas, el instructor  las valida, garantizando que puedas continuar con confianza.</p>
+            </div>
+            <div className={styles.cardone}>
+              <h2 className={styles.card__title}>Aprendiz</h2>
+              <h3 className={styles.card__subtitle}>Comunicación efectiva</h3>
+              <p className={styles.card__description}>Comunica tus inconvenientes fácilmente. Anexa excusas, el instructor  las valida, garantizando que puedas continuar con confianza.</p>
+            </div>
           </div>
-          <div className={styles.card__section}>
-            <h2 className={styles.card__title}>Aprendiz</h2>
-            <h3 className={styles.card__subtitle}>Comunicación efectiva</h3>
-            <p className={styles.card__description}>Comunica tus inconvenientes fácilmente. Anexa excusas, el instructor  las valida, garantizando que puedas continuar con confianza.</p>
+
+          <div className={styles.containerthree}>
+            <div className={styles.cardone}>
+              <h2 className={styles.card__title}>Aprendiz</h2>
+              <h3 className={styles.card__subtitle}>Comunicación efectiva</h3>
+              <p className={styles.card__description}>Comunica tus inconvenientes fácilmente. Anexa excusas, el instructor  las valida, garantizando que puedas continuar con confianza.</p>
+            </div>
           </div>
-          <div className={styles.card}>
-            <h2 className={styles.card__title}>Aprendiz</h2>
-            <h3 className={styles.card__subtitle}>Comunicación efectiva</h3>
-            <p className={styles.card__description}>Comunica tus inconvenientes fácilmente. Anexa excusas, el instructor  las valida, garantizando que puedas continuar con confianza.</p>
-          </div> */}
+
         </section>
       </main>
     </LandPageLayout>
