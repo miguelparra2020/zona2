@@ -6,8 +6,8 @@ import '../styles/global.css';
 
 const FooterMain = () => {
   return (
-    <div>
     <div classNme={styles.footer}>
+    <div >
       <div className={styles.container}>
             <p className={styles.container__p}>
               Copyright © 2023 - SENA CDIT / ADSO - 2465417
