@@ -12,7 +12,9 @@ const HomePage = () => {
     const [ingresos, setIngresos] = useState([]);
     const [salidas, setSalidas] = useState([]);
     //Inicializar la varialle con la fecha de hoy
-    const [fechaFiltro, setFechaFiltro] = useState(getFormattedDate()); 
+    // const [fechaFiltro, setFechaFiltro] = useState(getFormattedDate()); 
+    const [fechaInicioFiltro, setFechaInicioFiltro] = useState(getFormattedDate());
+    const [fechaFinFiltro, setFechaFinFiltro] = useState(getFormattedDate());
 //---------------Variables------------------------------------------------- 
 
 
@@ -66,15 +68,30 @@ const HomePage = () => {
                 <h1>Bienvenid@ al área de asistencias</h1>   
             </div>
 
-            <div>
-                <h1>Filtrar</h1> 
-                <div> 
-                    Por fecha: &nbsp;
-                <input
-                    type="date"
-                    value={fechaFiltro}
-                    onChange={(e) => setFechaFiltro(e.target.value)}
-                />
+            <div className="contenedor_filtros_asistencias">
+                <div className="div_titulo_filtrar">
+                    <h1>Filtrar</h1> 
+                </div>
+                <div className="div_fechas"> 
+                    <div className="div_fecha_inicio">
+                        Por fecha inicial: &nbsp;
+                        <input
+                            type="date"
+                            value={fechaInicioFiltro}
+                            onChange={(e) => setFechaInicioFiltro(e.target.value)}
+                            className="date_input" 
+                        />
+                    </div>
+                    <div className="div_fecha_final"> 
+                        hasta la fecha: &nbsp;
+                        <input
+                            type="date"
+                            value={fechaFinFiltro}
+                            onChange={(e) => setFechaFinFiltro(e.target.value)}
+                            className="date_input" 
+                        />
+                    </div>
+                    
                 </div>
             </div>
 
@@ -83,8 +100,11 @@ const HomePage = () => {
                 
                 {ingresos
                     .filter((ingreso) => {
-                        if (!fechaFiltro) return true; // Si no se ha ingresado fecha de filtro, mostrar todo
-                        return ingreso.fecha_ingreso === fechaFiltro;
+                        if (!fechaInicioFiltro || !fechaFinFiltro) return true; // Mostrar todo si no se ingresaron fechas
+                        return (
+                            ingreso.fecha_ingreso >= fechaInicioFiltro &&
+                            ingreso.fecha_ingreso <= fechaFinFiltro
+                        );
                     })
                     .map((ingreso) => {
                 // Extraer el ID de la URL
@@ -96,7 +116,7 @@ const HomePage = () => {
                         <p>icono: src:asdsadasd</p>
                         <p>Id ingreso: {id}</p>
                         <p>Usuario: {ingreso.username}</p>
-                        <p>Nombre: {ingreso.username}</p>
+                        <p>Nombre: Miguel Ángel Páez parra</p>
                         <p>Fecha de ingreso: {ingreso.fecha_ingreso}</p>
                         <p>Hora hora de ingreso: {ingreso.hora_ingreso}</p>
                         <p>zona: {ingreso.zona}</p>
@@ -109,8 +129,11 @@ const HomePage = () => {
                 <h1>Registros de Salidas</h1>  
                 {salidas
                     .filter((salida) => {
-                        if (!fechaFiltro) return true; // Si no se ha ingresado fecha de filtro, mostrar todo
-                        return salida.fecha_salida === fechaFiltro;
+                        if (!fechaInicioFiltro || !fechaFinFiltro) return true; // Mostrar todo si no se ingresaron fechas
+                        return (
+                            salida.fecha_salida >= fechaInicioFiltro &&
+                            salida.fecha_salida <= fechaFinFiltro
+                        );
                     })
                     .map((salida) => {
                     // Extraer el ID de la URL
@@ -119,8 +142,10 @@ const HomePage = () => {
 
                     return (
                         <div key={salida.url}>
-                            <p>Id: {id}</p>
-                            <p>username: {salida.username}</p>
+                            <p>icono: src:asdsadasd</p>
+                            <p>Id salida: {id}</p>
+                            <p>Usuario: {salida.username}</p>
+                            <p>Nombre: Miguel Ángel Páez parra</p>
                             <p>fecha_salida: {salida.fecha_salida}</p>
                             <p>hora_salida: {salida.hora_salida}</p>
                             <p>zona: {salida.zona}</p>
