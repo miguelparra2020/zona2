@@ -65,3 +65,21 @@ export async function deleteFicha(id) {
     }
 }
 
+
+//----------------------------Modelo---Ingresos-------------------------------
+
+//Función para obtener todas los ingresos, de la base de datos es un READ - lectura
+export async function getIngresos() {
+  const response = await fetch('https://miguelpaez9612.pythonanywhere.com/ingresos/');
+  const data = await response.json();
+  return data;
+}
+
+//----------------------------Modelo---Salidas-------------------------------
+
+//Función para obtener todas las salidas, de la base de datos es un READ - lectura
+export async function getSalidas() {
+  const response = await fetch('https://miguelpaez9612.pythonanywhere.com/salidas/');
+  const data = await response.json();
+  return data;
+}

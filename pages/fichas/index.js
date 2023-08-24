@@ -32,19 +32,19 @@ function FichasPage(){
             </div>
             <div>
             {fichas.map((ficha) => {
-    // Extraer el ID de la URL
-    const urlParts = ficha.url.split('/');
-    const id = urlParts[urlParts.length - 2]; // Suponemos que el ID está antes del último slash
+                // Extraer el ID de la URL
+                const urlParts = ficha.url.split('/');
+                const id = urlParts[urlParts.length - 2]; // Suponemos que el ID está antes del último slash
 
-    return (
-        <div key={ficha.url}>
-            <p>Id: {id}</p>
-            <p>Número de ficha: {ficha.numero_ficha}</p>
-            <p>Nombre de ficha: {ficha.nombre_ficha}</p>
-            <Link href={`/fichas/${id}`}>Editar</Link>
-        </div>
-    );
-})}
+                return (
+                    <div key={ficha.url}>
+                        <p>Id: {id}</p>
+                        <p>Número de ficha: {ficha.numero_ficha}</p>
+                        <p>Nombre de ficha: {ficha.nombre_ficha}</p>
+                        <Link href={`/fichas/${id}`}>Editar</Link>
+                    </div>
+                );
+            })}
 
             </div>
         </MainLayout>
