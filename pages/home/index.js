@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import '../../styles/pages/home.css'
 
+
 const HomePage = () => {
 
 //---------------Variables------------------------------------------------- 
@@ -61,7 +62,7 @@ const HomePage = () => {
 
     return (
         <MainLayout>
-            <div>
+            <div className="contenedor_titulo_asistencias">
                 <h1>Bienvenid@ al área de asistencias</h1>   
             </div>
 

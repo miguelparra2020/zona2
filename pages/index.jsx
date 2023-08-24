@@ -5,6 +5,7 @@ import styles from '@/styles/index.module.css';
 // Nota: Siempre importar etiquetas raras
 import Image from 'next/image';
 
+
 const LandPage = () => {
   return (
     <LandPageLayout>
