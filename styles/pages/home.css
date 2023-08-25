@@ -114,7 +114,6 @@ font-style: oblique;
     }
 }
 .contenedor_registro_salidas{
-    background-color: yellow;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -163,4 +162,50 @@ font-style: oblique;
     1.4px 15.5px 18px -1.7px hsla(0, 0%, 60%, 0.33),
     2px 22.2px 25.7px -2px hsla(0, 0%, 60%, 0.33),
     2.8px 30.9px 35.8px -2.3px hsla(0, 0%, 60%, 0.34);
+}
+.div_card_header{
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    pointer-events: none;
+}
+.div_card_usuario{
+    display: flex;
+    flex-direction: row;
+    @media (max-width:700px) {
+        flex-direction: column;
+    }
+    
+}
+.div_card_usuario_ind{
+    margin: 5px;
+    pointer-events: none;
+}
+.div_card_usuario_nombre{
+    color: #0669d2;
+    font-weight: 600;
+}
+.div_card_usuario_button_editar{
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.edit_link {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+.edit_link:hover {
+    background-color: #0056b3;
 }

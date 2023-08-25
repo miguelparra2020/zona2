@@ -3,7 +3,8 @@ import MainLayout from '../../components/layouts/MainLayout';
 import { getIngresos, getSalidas } from '../../db/db';
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import '../../styles/pages/home.css'
+import '../../styles/pages/home.css';
+import Image from 'next/image'
 
 
 const HomePage = () => {
@@ -122,14 +123,41 @@ const HomePage = () => {
                     return (
                             <div key={ingreso.url}>
                                 <div className="div_card">
-                                    <p>icono:</p>
-                                    <p>Id ingreso: {id}</p>
-                                    <p>Usuario: {ingreso.username}</p>
-                                    <p>Nombre: Miguel Ángel Páez parra</p>
-                                    <p>Fecha de ingreso: {ingreso.fecha_ingreso}</p>
-                                    <p>Hora hora de ingreso: {ingreso.hora_ingreso}</p>
-                                    <p>zona: {ingreso.zona}</p>
-                                    <Link href={`/ingresos/${id}`}>Editar</Link>
+                                    <div className="div_card_header">
+                                        <Image 
+                                        src="https://res.cloudinary.com/unidigital/image/upload/v1692931577/biometric%20services/acceso_wmsdly.png" alt="Icono de ingresos" 
+                                        width={30}
+                                        height={30}  />
+                                        &nbsp;&nbsp;                               
+                                        <p><strong>Id ingreso:</strong> {id}</p>
+                                    </div>
+                                    <div className="div_card_usuario">
+                                        <p className="div_card_usuario_ind">
+                                            <strong>▫ Usuario:</strong> {ingreso.username}</p>
+                                        <p className="div_card_usuario_ind">
+                                            <strong>Nombre:</strong> <span className="div_card_usuario_nombre">Miguel Ángel Páez parra</span> </p>
+                                    </div>
+                                    <div className="div_card_usuario">
+                                        <p className="div_card_usuario_ind">
+                                            <strong>▫ Fecha de ingreso:</strong> {ingreso.fecha_ingreso}</p>
+                                        <p className="div_card_usuario_ind">
+                                            <strong>Hora de ingreso:</strong> {ingreso.hora_ingreso}</p>
+                                    </div>
+                                    <div className="div_card_usuario">
+                                        <p className="div_card_usuario_ind">
+                                            <strong>▫ Ficha:</strong> 2465417
+                                        </p>
+                                        <p className="div_card_usuario_ind">
+                                            <strong>Zona:</strong> {ingreso.zona}
+                                        </p>
+                                    </div>
+                                    <div className="div_card_usuario_button_editar">
+                                        <Link href={`/home/ingresos/${id}`}className="edit_link">Editar &nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+  <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+  <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+</svg></Link>
+                                    </div>
+                                    
                                 </div>
                             </div>
                             );
@@ -158,16 +186,45 @@ const HomePage = () => {
                         const id = urlParts[urlParts.length - 2]; // Suponemos que el ID está antes del último slash
 
                         return (
-                                <div key={salida.url}>
-                                    <p>icono: src:asdsadasd</p>
-                                    <p>Id salida: {id}</p>
-                                    <p>Usuario: {salida.username}</p>
-                                    <p>Nombre: Miguel Ángel Páez parra</p>
-                                    <p>fecha_salida: {salida.fecha_salida}</p>
-                                    <p>hora_salida: {salida.hora_salida}</p>
-                                    <p>zona: {salida.zona}</p>
-                                    <Link href={`/salidas/${id}`}>Editar</Link>
+                            <div key={salida.url}>
+                            <div className="div_card">
+                                <div className="div_card_header">
+                                    <Image 
+                                    src="https://res.cloudinary.com/unidigital/image/upload/v1692931577/biometric%20services/cerrar-sesion_wlgj16.png" alt="Icono de ingresos" 
+                                    width={30}
+                                    height={30}  />
+                                    &nbsp;&nbsp;                               
+                                    <p><strong>Id salida:</strong> {id}</p>
                                 </div>
+                                <div className="div_card_usuario">
+                                    <p className="div_card_usuario_ind">
+                                        <strong>▫ Usuario:</strong> {salida.username}</p>
+                                    <p className="div_card_usuario_ind">
+                                        <strong>Nombre:</strong> <span className="div_card_usuario_nombre">Miguel Ángel Páez parra</span> </p>
+                                </div>
+                                <div className="div_card_usuario">
+                                    <p className="div_card_usuario_ind">
+                                        <strong>▫ Fecha de salida:</strong> {salida.fecha_salida}</p>
+                                    <p className="div_card_usuario_ind">
+                                        <strong>Hora de salida:</strong> {salida.hora_salida}</p>
+                                </div>
+                                <div className="div_card_usuario">
+                                    <p className="div_card_usuario_ind">
+                                        <strong>▫ Ficha:</strong> 2465417
+                                    </p>
+                                    <p className="div_card_usuario_ind">
+                                        <strong>Zona:</strong> {salida.zona}
+                                    </p>
+                                </div>
+                                <div className="div_card_usuario_button_editar">
+                                    <Link href={`/home/salidas/${id}`}className="edit_link">Editar &nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+<path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+<path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+</svg></Link>
+                                </div>
+                                
+                            </div>
+                        </div>
                                 );
                             })}
                     </div>                    
