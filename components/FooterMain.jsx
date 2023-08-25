@@ -6,7 +6,7 @@ import '../styles/global.css';
 
 const FooterMain = () => {
   return (
-    <div classNme={styles.footer}>
+    <div className={styles.footer}>
     <div >
       <div className={styles.container}>
             <p className={styles.container__p}>
