@@ -1,5 +1,6 @@
 body{
     background-color: #fbfbe2;
+    /* pointer-events: none; */
 }
 body, html{
     font-family: "Noto Sans";
@@ -26,16 +27,19 @@ font-style: oblique;
     align-items: center;
     justify-content: center;
     text-align: center;
+    pointer-events: none;
 }
 .contenedor_filtros_asistencias{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    /* pointer-events: none; */
 }
 .div_titulo_filtrar{
     margin-top: 10px;
     margin-bottom: 5px;
+    pointer-events: none;
 }
 .div_fechas{
     width: 100%;
@@ -82,9 +86,81 @@ font-style: oblique;
     background-color: #fff;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
     transition: border-color 0.3s, box-shadow 0.3s;
+    cursor: pointer;
 }
 .date_input:focus {
     border-color: #007bff;
     outline: none;
     box-shadow: 0px 2px 6px rgba(0, 123, 255, 0.3);
+    cursor: pointer;
+}
+.contenedor_registros{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    @media (max-width: 700px) {
+        flex-direction: column;
+    }
+}
+.contenedor_registro_ingresos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    @media (max-width: 700px) {
+        width: 98%;
+    }
+}
+.contenedor_registro_salidas{
+    background-color: yellow;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    @media (max-width: 700px) {
+        width: 98%;
+    }
+}
+.div_titulo_registros{
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+}
+.div_contenedor_card_registros{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.div_card {
+    background-color: white;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    box-shadow:
+        0px 0.3px 0.3px hsla(0, 0%, 60%, 0.28),
+        0.1px 0.8px 0.9px -0.6px hsla(0, 0%, 60%, 0.29),
+        0.1px 1.6px 1.9px -1.2px hsla(0, 0%, 60%, 0.3),
+        0.3px 3.1px 3.6px -1.7px hsla(0, 0%, 60%, 0.31),
+        0.5px 6px 7px -2.3px hsla(0, 0%, 60%, 0.32);
+}
+.div_card:hover {
+        box-shadow:
+        0px 0.3px 0.3px hsla(0, 0%, 60%, 0.29),
+    0.2px 1.7px 2px -0.3px hsla(0, 0%, 60%,0.3),
+    0.3px 3.1px 3.6px -0.6px hsla(0, 0%, 60%, 0.31),
+    0.4px 4.8px 5.6px -0.9px hsla(0, 0%, 60%, 0.31),
+    0.7px 7.2px 8.4px -1.2px hsla(0, 0%, 60%,0.32),
+    1px 10.7px 12.4px -1.4px hsla(0, 0%, 60%, 0.32),
+    1.4px 15.5px 18px -1.7px hsla(0, 0%, 60%, 0.33),
+    2px 22.2px 25.7px -2px hsla(0, 0%, 60%, 0.33),
+    2.8px 30.9px 35.8px -2.3px hsla(0, 0%, 60%, 0.34);
 }
