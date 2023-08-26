@@ -1,7 +1,7 @@
 import React from "react";
 import MainLayout from '../../components/layouts/MainLayout';
 import '../../styles/pages/fichas.css';
-import { PDFViewer } from '@react-pdf/renderer';
+// import { PDFViewer } from '@react-pdf/renderer';
 // import { PDFDownloadLink } from '@react-pdf/renderer';
 
 import MyDocumentFichas from './documento-fichas';
@@ -12,9 +12,8 @@ function DowloadFichasPage(){
     return (
         <MainLayout>
             
-            <PDFViewer>
+            
                 <MyDocumentFichas />
-            </PDFViewer>
             
         </MainLayout>
     )
