@@ -10,11 +10,8 @@ function DowloadFichasPage(){
 
 //---área visual de la página---------
     return (
-        <MainLayout>
-            
-            
-                <MyDocumentFichas />
-            
+        <MainLayout>          
+                <MyDocumentFichas />            
         </MainLayout>
     )
 };
