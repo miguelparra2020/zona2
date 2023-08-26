@@ -168,7 +168,7 @@ const HomePage = () => {
                 {/* registros de ingresos*/}
 
                 {/* registros de salidas*/}
-                <div className="contenedor_registro_salidas">
+                <div className="contenedor_registro_ingresos">
                     <div className="div_titulo_registros">
                         <h1>Registros de Salidas</h1>  
                     </div>
