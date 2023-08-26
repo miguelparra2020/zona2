@@ -17,6 +17,11 @@ const NavbarMain = () => {
             </h1>
           </Link>
         </div>
+        <div>
+          <Link href="/home" className={styles.nav__link}> 
+              asistencias
+          </Link>
+        </div>
         <div >
           <Link href="/excusas" className={styles.nav__link}>     
               <div>Excusas</div>

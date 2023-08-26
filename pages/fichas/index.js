@@ -4,12 +4,13 @@ import { getFichas } from '../../db/db';
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import '../../styles/pages/fichas.css';
-import Image from 'next/image'
+import Image from 'next/image';
 
 function FichasPage(){
 //----------------Variables---------------------------------
-    const [fichas, setFichas] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
+    const [originalFichas, setOriginalFichas] = useState([]);
+    const [orderedFichas, setOrderedFichas] = useState([]);
 //----------------Variables---------------------------------
 
 //----Función useEffect asyncrona para obtener la data de fichas-------
@@ -17,8 +18,10 @@ function FichasPage(){
         async function fetchFichas() {
             try {
                 const data = await getFichas();
-                setFichas(data);
-                console.log(data);
+                setOriginalFichas(data);
+                
+                const orderedData = [...data].sort((a, b) => a.numero_ficha - b.numero_ficha);
+                setOrderedFichas(orderedData);
             } catch (error) {
                 console.error(error);
             }
@@ -30,15 +33,20 @@ function FichasPage(){
 
 //----Función Handle de busqueda para filtrar por numero y nombre de fichas---
     const handleSearch = () => {
-        const filteredFichas = fichas.filter((ficha) => {
+        const filteredFichas = originalFichas.filter((ficha) => {
             return (
                 ficha.numero_ficha.toLowerCase().includes(searchTerm.toLowerCase()) ||
                 ficha.nombre_ficha.toLowerCase().includes(searchTerm.toLowerCase())
             );
         });
-        setFichas(filteredFichas);
+    
+        const orderedFilteredFichas = [...filteredFichas].sort((a, b) => a.numero_ficha - b.numero_ficha);
+    
+        setOrderedFichas(orderedFilteredFichas);
     };
 //----Función Handle de busqueda para filtrar por numero y nombre de fichas---
+
+
 
 //---área visual de la página---------
     return (
@@ -48,10 +56,13 @@ function FichasPage(){
                 <h1>Bienvenid@ al área de fichas</h1>   
             </div>
             {/* titulo */}
+
             {/* área de búsqueda de fichas y crear */}
             <div className="contenedor_busqueda_fichas">
-                <div>
-                <Link href="/fichas/nueva" className="edit_link_ficha">Crear ficha</Link>
+                <div className="div_crear_ficha">
+                <Link href="/fichas/nueva" className="crear_link_ficha">Crear ficha &nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-node-plus-fill" viewBox="0 0 16 16">
+  <path d="M11 13a5 5 0 1 0-4.975-5.5H4A1.5 1.5 0 0 0 2.5 6h-1A1.5 1.5 0 0 0 0 7.5v1A1.5 1.5 0 0 0 1.5 10h1A1.5 1.5 0 0 0 4 8.5h2.025A5 5 0 0 0 11 13zm.5-7.5v2h2a.5.5 0 0 1 0 1h-2v2a.5.5 0 0 1-1 0v-2h-2a.5.5 0 0 1 0-1h2v-2a.5.5 0 0 1 1 0z"/>
+</svg></Link>
                 </div>
                 <div>
                     <input
@@ -62,12 +73,17 @@ function FichasPage(){
                     />
                     <button onClick={handleSearch}>Buscar</button>
                 </div>
+                <div>
+                    <Link href="/download-fichas-pdf">
+                        Descargar PDF de fichas
+                    </Link>
+                </div>
             </div>
             {/* área de búsqueda de fichas y crear */}
 
             {/* área de la ficha, recorrido map de todas las fichas */}
             <div className="contenedor_fichas">
-            {fichas.map((ficha) => {
+            {orderedFichas.map((ficha) => {
                 // Extraer el ID de la URL
                 const urlParts = ficha.url.split('/');
                 const id = urlParts[urlParts.length - 2]; // Suponemos que el ID está antes del último slash

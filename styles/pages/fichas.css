@@ -90,16 +90,37 @@ font-style: oblique;
 .edit_link_ficha:hover{
     background-color: #0056b3;
 }
+.crear_link_ficha{
+    display: inline-block;
+    background-color: #0ed46b;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.crear_link_ficha:hover{
+    background-color: #0d8042;
+}
 .contenedor_busqueda_fichas{
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
+    margin: 20px;
 }
+
 
 @media (max-width: 750px) {
     .div_card_fichas{
         width: 90%;
+    }
+    .div_crear_ficha{
+        margin: 10px;
     }
     .contenedor_busqueda_fichas{
         flex-direction: column;
