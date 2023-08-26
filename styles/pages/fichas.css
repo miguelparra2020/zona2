@@ -90,9 +90,18 @@ font-style: oblique;
 .edit_link_ficha:hover{
     background-color: #0056b3;
 }
+.contenedor_busqueda_fichas{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
 
 @media (max-width: 750px) {
     .div_card_fichas{
         width: 90%;
+    }
+    .contenedor_busqueda_fichas{
+        flex-direction: column;
     }
 }

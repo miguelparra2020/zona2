@@ -7,8 +7,12 @@ import '../../styles/pages/fichas.css';
 import Image from 'next/image'
 
 function FichasPage(){
+//----------------Variables---------------------------------
     const [fichas, setFichas] = useState([]);
-    
+    const [searchTerm, setSearchTerm] = useState('');
+//----------------Variables---------------------------------
+
+//----Función useEffect asyncrona para obtener la data de fichas-------
     useEffect(() => {
         async function fetchFichas() {
             try {
@@ -21,9 +25,22 @@ function FichasPage(){
         }
 
         fetchFichas();
-    }, []);
-    
+    }, [searchTerm]);
+//----Función useEffect asyncrona para obtener la data de fichas-------
 
+//----Función Handle de busqueda para filtrar por numero y nombre de fichas---
+    const handleSearch = () => {
+        const filteredFichas = fichas.filter((ficha) => {
+            return (
+                ficha.numero_ficha.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                ficha.nombre_ficha.toLowerCase().includes(searchTerm.toLowerCase())
+            );
+        });
+        setFichas(filteredFichas);
+    };
+//----Función Handle de busqueda para filtrar por numero y nombre de fichas---
+
+//---área visual de la página---------
     return (
         <MainLayout>
             {/* titulo */}
@@ -31,11 +48,24 @@ function FichasPage(){
                 <h1>Bienvenid@ al área de fichas</h1>   
             </div>
             {/* titulo */}
-            <div>
-                <h3><Link href="/fichas/nueva">Crear ficha</Link></h3>  
+            {/* área de búsqueda de fichas y crear */}
+            <div className="contenedor_busqueda_fichas">
+                <div>
+                <Link href="/fichas/nueva" className="edit_link_ficha">Crear ficha</Link>
+                </div>
+                <div>
+                    <input
+                        type="text"
+                        placeholder="Buscar por número o nombre de ficha"
+                        value={searchTerm}
+                        onChange={(e) => setSearchTerm(e.target.value)}
+                    />
+                    <button onClick={handleSearch}>Buscar</button>
+                </div>
             </div>
+            {/* área de búsqueda de fichas y crear */}
 
-
+            {/* área de la ficha, recorrido map de todas las fichas */}
             <div className="contenedor_fichas">
             {fichas.map((ficha) => {
                 // Extraer el ID de la URL
@@ -66,10 +96,10 @@ function FichasPage(){
                         </div>
                 );
             })}
-
             </div>
+            {/* área de la ficha, recorrido map de todas las fichas */}
         </MainLayout>
     )
 };
-
+//---área visual de la página---------
 export default FichasPage;
