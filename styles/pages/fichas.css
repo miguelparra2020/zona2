@@ -1,0 +1,98 @@
+body{
+    background-color: #fbfbe2;
+    /* pointer-events: none; */
+}
+body, html{
+    font-family: "Noto Sans";
+    font-weight: normal;
+    font-style: normal;
+    }   
+h1{
+font-family: "Laila";
+font-weight: 600;
+font-style: normal;
+}
+h2, h3, h4{
+font-family: "Fira Sans";
+font-weight: 200;
+font-style: oblique;
+}
+.contenedor_titulo_fichas{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    pointer-events: none;
+}
+.contenedor_fichas{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.div_card_fichas{
+    margin: 10px;
+    padding: 10px;
+    width: 50rem;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow:
+        0px 0.3px 0.3px hsla(0, 0%, 60%, 0.28),
+        0.1px 0.8px 0.9px -0.6px hsla(0, 0%, 60%, 0.29),
+        0.1px 1.6px 1.9px -1.2px hsla(0, 0%, 60%, 0.3),
+        0.3px 3.1px 3.6px -1.7px hsla(0, 0%, 60%, 0.31),
+        0.5px 6px 7px -2.3px hsla(0, 0%, 60%, 0.32);
+}
+.div_card_fichas:hover {
+    box-shadow:
+    0px 0.3px 0.3px hsla(0, 0%, 60%, 0.29),
+0.2px 1.7px 2px -0.3px hsla(0, 0%, 60%,0.3),
+0.3px 3.1px 3.6px -0.6px hsla(0, 0%, 60%, 0.31),
+0.4px 4.8px 5.6px -0.9px hsla(0, 0%, 60%, 0.31),
+0.7px 7.2px 8.4px -1.2px hsla(0, 0%, 60%,0.32),
+1px 10.7px 12.4px -1.4px hsla(0, 0%, 60%, 0.32),
+1.4px 15.5px 18px -1.7px hsla(0, 0%, 60%, 0.33),
+2px 22.2px 25.7px -2px hsla(0, 0%, 60%, 0.33),
+2.8px 30.9px 35.8px -2.3px hsla(0, 0%, 60%, 0.34);
+}
+.div_header_fichas{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    pointer-events: none;
+}
+.div_body_fichas{
+    padding: 10px;
+    pointer-events: none;
+}
+.div_button_editar_ficha{
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.edit_link_ficha{
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.edit_link_ficha:hover{
+    background-color: #0056b3;
+}
+
+@media (max-width: 750px) {
+    .div_card_fichas{
+        width: 90%;
+    }
+}
