@@ -6,7 +6,7 @@ import { PDFDownloadLink } from '@react-pdf/renderer';
 
 import MyDocumentFichas from './documento-fichas';
 
-function DowloadPage(){
+function DowloadFichasPage(){
 
 //---área visual de la página---------
     return (
@@ -28,5 +28,5 @@ function DowloadPage(){
 };
 
 //---área visual de la página---------
-export default DowloadPage;
+export default DowloadFichasPage;
 
