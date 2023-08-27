@@ -1,19 +1,17 @@
 import React from "react";
 import MainLayout from '../../components/layouts/MainLayout';
-import { Page, Document,Text, View, } from '@react-pdf/renderer';
-// import MyDocument from './down-component';
+import MyDocument from './down-component';
+import { PDFViewer } from '@react-pdf/renderer';
 
 
-const DownFichasPage = () => {
+
+function DownFichasPage () {
     return (
-            <Document>
-                <Page size="A4">
-                <View>
-                            <Text>Hola soy DownFichasPage</Text>
-                            
-                        </View>
-                </Page>
-            </Document>
+            <MainLayout>
+                <PDFViewer>
+                    <MyDocument/>
+                </PDFViewer>
+            </MainLayout>
     )
 };
 
