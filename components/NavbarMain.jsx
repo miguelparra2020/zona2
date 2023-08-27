@@ -28,6 +28,11 @@ const NavbarMain = () => {
           </Link>
         </div>
         <div>
+          <Link href="/miqr" className={styles.nav__link}>     
+              <div>Mi Qr</div>
+          </Link>
+        </div>
+        <div>
           <Link href="/fichas" className={styles.nav__link}>     
               <div>Fichas</div>
           </Link>
