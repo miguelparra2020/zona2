@@ -1,7 +1,7 @@
 import React from "react";
 import MainLayout from '../../components/layouts/MainLayout';
 import MyDocument from './down-component';
-import { PDFDownloadLink } from "@react-pdf/renderer";
+import { PDFDownloadLink, PDFViewer } from "@react-pdf/renderer";
 import { Suspense } from 'react';
 
 function DownFichasPage () {
@@ -10,7 +10,11 @@ function DownFichasPage () {
                 <Suspense fallback={<Loading />}>
                     <PDFDownloadLink document={<MyDocument/>} >
                     descargar
-                    </PDFDownloadLink></Suspense>
+                    </PDFDownloadLink>
+                    <PDFViewer>
+                        <MyDocument/>
+                    </PDFViewer>
+                </Suspense>
                 
             </MainLayout>
     )
