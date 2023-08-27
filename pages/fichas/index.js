@@ -74,7 +74,7 @@ function FichasPage(){
                     <button onClick={handleSearch}>Buscar</button>
                 </div>
                 <div>
-                    <Link href="/">
+                    <Link href="/down-fichas">
                         Descargar PDF de fichas
                     </Link>
                 </div>
