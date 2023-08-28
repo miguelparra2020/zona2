@@ -18,15 +18,6 @@ function FichasPage(){
 
 //----Función useEffect asyncrona para obtener la data de fichas-------
     useEffect(() => {
-        //----Función para detectar al usuario ---------
-        if (typeof window !== 'undefined') {
-            const storedUsuario = localStorage.getItem('usuario');
-            setUsuario(storedUsuario);
-          }
-        if (usuario == 'sin-usuario'){
-            router.push('/');
-        }
-//----Función para detectar al usuario ---------
         async function fetchFichas() {
             try {
                 const data = await getFichas();
