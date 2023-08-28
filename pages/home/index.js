@@ -56,13 +56,18 @@ const HomePage = () => {
         try {
             const data = await getUsuario(username);
             setUsuario(data);
+            localStorage.setItem('id',data.id);
+            localStorage.setItem('first_name',data.first_name);
+            localStorage.setItem('last_name',data.last_name);
+            localStorage.setItem('email',data.email);
+            localStorage.setItem('ficha',data.ficha);
+            localStorage.setItem('tipo_usuario',data.tipo_usuario);
             console.log(data);
         } catch (error) {
             console.error(error);
         }
     }
 //--- Función para obtener los datos del usuario----
-
 
 //---Función asyncrona para obtener los datos de ingresos -----------------
         async function fetchIngreos() {
@@ -91,8 +96,7 @@ const HomePage = () => {
 //---Inicializar funciones asyncronas -----------------
         fetchUsuario();
         fetchIngreos();
-        fetchSalidas();
-        
+        fetchSalidas();        
 //---Inicializar funciones asyncronas -----------------
     }, [access_token,username, router]);
     
@@ -103,6 +107,9 @@ const HomePage = () => {
             <div className="contenedor_titulo_asistencias">
                 
                 <h1>Bienvenid@ {usuario.first_name} {usuario.last_name} al área de asistencias</h1>   
+            </div>
+            <div className="contenedor_titulo_asistencias">
+                <h1>Usuario {usuario.tipo_usuario} - Ficha {usuario.ficha}</h1>   
             </div>
             {/* titulo */}
 
