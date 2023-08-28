@@ -1,18 +1,22 @@
 import React, { useEffect, useState } from "react";
 import MainLayout from '../../../components/layouts/MainLayout';
-import { getUsuarios, getFichas } from '../../../db/db';
+import { getUsuarios, getFichas, CreateUsuario } from '../../../db/db';
+import { useRouter } from 'next/router';
 
 const CrearUsuarioPage = () => {
-    const [existeUsuario, setExisteUsuario] = useState([]); 
-    const [username, setUsername] = useState([]); 
-    const [first_name, setFirstName] = useState([]); 
-    const [last_name, setLastName] = useState([]); 
-    const [email, setEmail] = useState([]);
+    const [existeUsuario, setExisteUsuario] = useState(''); 
+    const [username, setUsername] = useState(''); 
+    const [first_name, setFirstName] = useState(''); 
+    const [last_name, setLastName] = useState(''); 
+    const [email, setEmail] = useState('');
     const [ficha, setFicha] = useState([]);  
     const [fichas, setFichas] = useState([]); 
-    const [fichaSeleccionada, setFichaSeleccionada] = useState([]); 
-    // const [tipo, setFichaSeleccionada] = useState([]); 
+    const [fichaSeleccionada, setFichaSeleccionada] = useState(""); 
+    const [tipo_usuario, setTipoUsuario] = useState(""); 
+    const [password, setPassword] = useState(''); 
+    const [confirmPassword, setConfirmPassword] = useState(''); 
 
+    const router = useRouter();
 
     useEffect(() => {
         async function fetchUsuarios() {
@@ -28,9 +32,15 @@ const CrearUsuarioPage = () => {
         fetchUsuarios();
     }, []);
 
+    //---Función para el cambio de selección de ficha----
     const handleFichaChange = (e) => {
         setFichaSeleccionada(e.target.value);
         setFicha(e.target.value);
+    };
+    //---Función para el cambio de selección de ficha----
+
+    const handleTipoUsuarioChange = (e) => {
+        setTipoUsuario(e.target.value);
     };
 
     //Validación de formulario 
@@ -43,6 +53,46 @@ const CrearUsuarioPage = () => {
             alert('El usuario ingresado ya existe, por favor ingrese un valor diferente.');
             return;
         }
+
+        if (username == '') {
+            alert('Por favor ingresar un valor de usuario, recuerda es el número de documento identidad!.');
+            return;
+        }
+
+        if (first_name == '') {
+            alert('Por favor ingresar los nombres del usuario!.');
+            return;
+        }
+
+        if (last_name == '') {
+            alert('Por favor ingresar los apellidos del usuario!.');
+            return;
+        }
+
+        if (email == '') {
+            alert('Por favor ingresar el correo del usuario!.');
+            return;
+        }
+
+        if (ficha == '') {
+            alert('Por favor asignar una ficha al usuario!.');
+            return;
+        }
+
+        if (tipo_usuario == '') {
+            alert('Por favor seleccionar un tipo de usuario!.');
+            return;
+        }
+
+        if (password == '') {
+            alert('Por favor crear una contraseña al usuario!.');
+            return;
+        }
+
+        if (password != confirmPassword) {
+            alert('La contraseña proporcionada es diferente al confirmarse, por favor validar!.');
+            return;
+        }
     
         const usuarioData = {
             username,
@@ -50,13 +100,18 @@ const CrearUsuarioPage = () => {
             first_name,
             last_name,
             ficha,
+            tipo_usuario,
+            password
             
         };
         console.log(usuarioData);
-        // const createFicha = await CreateFicha(fichaData);
-        // console.log(fichaData);
-        // alert("Ha creado la ficha de manera exitosa");
-        // router.push(`/fichas`);
+
+
+
+        const createUsuario = await CreateUsuario(usuarioData);
+        console.log(createUsuario);
+        alert("Ha creado el usuario de manera exitosa");
+        router.push(`/usuarios`);
     };
 
     
@@ -89,7 +144,7 @@ const CrearUsuarioPage = () => {
             <div>
             Asignar ficha:&nbsp;
             <select value={fichaSeleccionada} onChange={handleFichaChange}>
-                <option value="1">Selecciona una ficha</option>
+                <option value="">Selecciona una ficha</option>
                 {fichas.map((ficha) => (
                     <option key={ficha.url} value={ficha.numero_ficha}>
                         {ficha.numero_ficha}
@@ -99,10 +154,21 @@ const CrearUsuarioPage = () => {
             </div>
             <div>
             Tipo de usuario:&nbsp;
-            <select value={fichaSeleccionada} onChange={handleFichaChange}>
+            <select value={tipo_usuario} onChange={handleTipoUsuarioChange}>
+                <option value="">Seleccionar Tipo de Usuario</option>
                 <option value="aprendiz">Aprendiz</option>
                 <option value="instructor">Instructor</option>
+                <option value="administrador">Administrador</option>
+                <option value="instructoradministrador">Instructor Administrador</option>
             </select>
+            </div>
+            <div>
+            Contraseña:&nbsp;
+            <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+            </div>
+            <div>
+            Confirmar contraseña:&nbsp;
+            <input type="password" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
             </div>
             <button type="submit">Crear usuario</button> 
         </form>
