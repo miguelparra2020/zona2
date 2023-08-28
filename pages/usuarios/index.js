@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import MainLayout from '../../components/layouts/MainLayout';
 import { getUsuarios } from '../../db/db';
+import Link from "next/link";
 
 const UsuariosPage = () => {
     const [usuarios, setUsuarios] = useState([]);
@@ -23,6 +24,11 @@ const UsuariosPage = () => {
         <MainLayout>
             <div>
                 <h1>Hola soy Usuarios</h1>
+            </div>
+            <div>
+                <Link href="/usuarios/nuevo">
+                <button>Crear nuevo usuario</button>
+                </Link> 
             </div>
             <div>
                 {usuarios.map((item) => (

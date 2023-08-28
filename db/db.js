@@ -92,6 +92,25 @@ export async function getUsuario(username) {
   return data;
 }
 
+//del CRUD - usuario
+//Created 🆕
+//Función para crear un usuario
+
+export async function CreateUsuario(usuarioData) {
+  const response = await fetch('https://miguelpaez9612.pythonanywhere.com/register/', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(usuarioData),
+  });
+
+  const data = await response.json();
+  return data;
+}
+
+
+
 //----------------------------Modelo---Usuarios-------------------------------
 export async function getUsuarios() {
   const response = await fetch('https://miguelpaez9612.pythonanywhere.com/users/');
