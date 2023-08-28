@@ -3,10 +3,12 @@ import  LoginLayout from '../../components/layouts/LoginLayout';
 import Link from 'next/link';
 import styles from '@/styles/login.module.css';
 import axios from 'axios';
+import { useRouter } from 'next/router';
 
 const LoginPage = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const router = useRouter();
 
   const handleLogin = async () => {
     try {
@@ -17,13 +19,17 @@ const LoginPage = () => {
 
       const accessToken = response.data.access;
       console.log('Token de acceso:', accessToken);
-
+      
     // Almacena el token en localStorage o en una cookie
     localStorage.setItem('access_token', accessToken);
     localStorage.setItem('usuario', username);
 
+    router.push('/home');
+
       // Aquí puedes guardar el token en el almacenamiento local o en una cookie
     } catch (error) {
+      const usuario = 'sin-usuario';
+      localStorage.setItem('usuario', usuario);
       alert("Usuario invalido, por favor revisa sus credenciales")
       console.error('Error al iniciar sesión:', error);
     }

@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useRouter } from 'next/router';
 
 const LoginPage = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-
+  const router = useRouter();
   const handleLogin = async () => {
     try {
       const response = await axios.post('https://miguelpaez9612.pythonanywhere.com/api/token/', {
@@ -14,6 +15,7 @@ const LoginPage = () => {
 
       const accessToken = response.data.access;
       console.log('Token de acceso:', accessToken);
+      router.push('/home');
 
       // Aquí puedes guardar el token en el almacenamiento local o en una cookie
     } catch (error) {

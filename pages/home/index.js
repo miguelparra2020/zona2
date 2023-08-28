@@ -6,6 +6,7 @@ import Link from "next/link";
 import '../../styles/pages/home.css';
 import Image from 'next/image'
 import { Suspense } from 'react';
+import { useRouter } from 'next/router';
 
 
 const HomePage = () => {
@@ -15,6 +16,8 @@ const HomePage = () => {
     const [salidas, setSalidas] = useState([]);
     const [fechaInicioFiltro, setFechaInicioFiltro] = useState(getFormattedDate());
     const [fechaFinFiltro, setFechaFinFiltro] = useState(getFormattedDate());
+    const [usuario, setUsuario] = useState('');
+    const router = useRouter();
 //---------------Variables------------------------------------------------- 
 
 
@@ -31,6 +34,14 @@ const HomePage = () => {
 
 
     useEffect(() => {
+        
+        if (typeof window !== 'undefined') {
+            const storedUsuario = localStorage.getItem('usuario');
+            setUsuario(storedUsuario);
+          }
+        if (usuario == 'sin-usuario'){
+            router.push('/');
+        }
 //---Función asyncrona para obtener los datos de ingresos -----------------
         async function fetchIngreos() {
             try {
@@ -59,11 +70,12 @@ const HomePage = () => {
         fetchIngreos();
         fetchSalidas();
 //---Inicializar funciones asyncronas -----------------
-    }, []);
+    }, [usuario,router]);
     
 
     return (
         <MainLayout>
+            {usuario}
             {/* titulo */}
             <div className="contenedor_titulo_asistencias">
                 <h1>Bienvenid@ al área de asistencias</h1>   
