@@ -83,3 +83,4 @@ export async function getSalidas() {
   const data = await response.json();
   return data;
 }
+

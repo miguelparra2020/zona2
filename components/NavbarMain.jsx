@@ -33,6 +33,11 @@ const NavbarMain = () => {
           </Link>
         </div>
         <div>
+          <Link href="/miperfil" className={styles.nav__link}>     
+              <div>Mi Perfil</div>
+          </Link>
+        </div>
+        <div>
           <Link href="/fichas" className={styles.nav__link}>     
               <div>Fichas</div>
           </Link>
@@ -40,11 +45,6 @@ const NavbarMain = () => {
         <div>
           <Link href="/usuarios" className={styles.nav__link}>     
               <div>Usuarios</div>
-          </Link>
-        </div>
-        <div>
-          <Link href="https://miguelpaez9612.pythonanywhere.com/admin/" target='_blank' className={styles.nav__link}>     
-              <div>Administración</div>
           </Link>
         </div>
         <div>

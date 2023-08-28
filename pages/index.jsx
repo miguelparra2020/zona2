@@ -1,5 +1,5 @@
 // pages/index.js
-import React from 'react';
+import React, { useEffect } from 'react';
 import  LandPageLayout from '../components/layouts/LandPageLayout';
 import styles from '@/styles/index.module.css';
 // Nota: Siempre importar etiquetas raras
@@ -7,6 +7,13 @@ import Image from 'next/image';
 
 
 const LandPage = () => {
+  useEffect(() => {
+    // Aquí puedes agregar el código de almacenamiento del token
+    const accessToken = 'sin-acceso';
+    const usuario = 'sin-usuario';
+    localStorage.setItem('access_token', accessToken);
+    localStorage.setItem('usuario', usuario);
+  }, []);
   return (
     <LandPageLayout>
       <main className={styles.main}>

@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import '../../styles/pages/home.css';
 import Image from 'next/image'
+import { Suspense } from 'react';
 
 
 const HomePage = () => {
@@ -107,8 +108,7 @@ const HomePage = () => {
                         <h1>Registros de ingresos</h1> 
                     </div>
                     <div className="div_contenedor_card_registros">
-                    {ingresos
-                        .filter((ingreso) => {
+                    {ingresos.filter((ingreso) => {
                             if (!fechaInicioFiltro || !fechaFinFiltro) return true; // Mostrar todo si no se ingresaron fechas
                             return (
                                 ingreso.fecha_ingreso >= fechaInicioFiltro &&
@@ -173,6 +173,7 @@ const HomePage = () => {
                         <h1>Registros de Salidas</h1>  
                     </div>
                     <div className="div_contenedor_card_registros">
+                    <Suspense fallback={<Loading />}>
                     {salidas
                         .filter((salida) => {
                             if (!fechaInicioFiltro || !fechaFinFiltro) return true; // Mostrar todo si no se ingresaron fechas
@@ -228,6 +229,7 @@ const HomePage = () => {
                         </div>
                                 );
                             })}
+                    </Suspense>
                     </div>                    
                 </div>
                 {/* registros de salidas*/}
@@ -239,3 +241,7 @@ const HomePage = () => {
 };
 
 export default HomePage;
+
+function Loading() {
+    return <h2>🌀 Loading...</h2>;
+  }
