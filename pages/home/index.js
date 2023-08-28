@@ -1,6 +1,6 @@
 import React from "react";
 import MainLayout from '../../components/layouts/MainLayout';
-import { getIngresos, getSalidas } from '../../db/db';
+import { getIngresos, getSalidas, getUsuario } from '../../db/db';
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import '../../styles/pages/home.css';
@@ -17,6 +17,8 @@ const HomePage = () => {
     const [fechaInicioFiltro, setFechaInicioFiltro] = useState(getFormattedDate());
     const [fechaFinFiltro, setFechaFinFiltro] = useState(getFormattedDate());
     const [access_token, setAccess] = useState('');
+    const [username, setUsername] = useState('');
+    const [usuario, setUsuario] = useState('');
     const router = useRouter();
 //---------------Variables------------------------------------------------- 
 
@@ -39,11 +41,28 @@ const HomePage = () => {
         if (typeof window !== 'undefined') {
             const storedUsuario = localStorage.getItem('access_token');
             setAccess(storedUsuario);
-          }
+            }
         if (access_token == 'sin-acceso'){
             router.push('/');
         }
 //----Función para detectar al usuario ---------
+        
+//--- obtención de la data de local storage------
+    setUsername(localStorage.getItem('username'));
+//--- obtención de la data de local storage------
+
+//--- Función para obtener los datos del usuario----
+    async function fetchUsuario() {
+        try {
+            const data = await getUsuario(username);
+            setUsuario(data);
+            console.log(data);
+        } catch (error) {
+            console.error(error);
+        }
+    }
+//--- Función para obtener los datos del usuario----
+
 
 //---Función asyncrona para obtener los datos de ingresos -----------------
         async function fetchIngreos() {
@@ -70,17 +89,20 @@ const HomePage = () => {
 //---Función asyncrona para obtener los datos de salidas -----------------
 
 //---Inicializar funciones asyncronas -----------------
+        fetchUsuario();
         fetchIngreos();
         fetchSalidas();
+        
 //---Inicializar funciones asyncronas -----------------
-    }, [access_token, router]);
+    }, [access_token,username, router]);
     
-
+    console.log(usuario)
     return (
         <MainLayout>
             {/* titulo */}
             <div className="contenedor_titulo_asistencias">
-                <h1>Bienvenid@ al área de asistencias</h1>   
+                
+                <h1>Bienvenid@ {usuario.first_name} {usuario.last_name} al área de asistencias</h1>   
             </div>
             {/* titulo */}
 
