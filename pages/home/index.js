@@ -16,7 +16,7 @@ const HomePage = () => {
     const [salidas, setSalidas] = useState([]);
     const [fechaInicioFiltro, setFechaInicioFiltro] = useState(getFormattedDate());
     const [fechaFinFiltro, setFechaFinFiltro] = useState(getFormattedDate());
-    const [usuario, setUsuario] = useState('');
+    const [access_token, setAccess] = useState('');
     const router = useRouter();
 //---------------Variables------------------------------------------------- 
 
@@ -34,14 +34,17 @@ const HomePage = () => {
 
 
     useEffect(() => {
-        
+
+//----Función para detectar al usuario ---------
         if (typeof window !== 'undefined') {
-            const storedUsuario = localStorage.getItem('usuario');
-            setUsuario(storedUsuario);
+            const storedUsuario = localStorage.getItem('access_token');
+            setAccess(storedUsuario);
           }
-        if (usuario == 'sin-usuario'){
+        if (access_token == 'sin-acceso'){
             router.push('/');
         }
+//----Función para detectar al usuario ---------
+
 //---Función asyncrona para obtener los datos de ingresos -----------------
         async function fetchIngreos() {
             try {
@@ -70,12 +73,12 @@ const HomePage = () => {
         fetchIngreos();
         fetchSalidas();
 //---Inicializar funciones asyncronas -----------------
-    }, [usuario,router]);
+    }, [access_token, router]);
     
 
     return (
         <MainLayout>
-            {usuario}
+            {access_token}
             {/* titulo */}
             <div className="contenedor_titulo_asistencias">
                 <h1>Bienvenid@ al área de asistencias</h1>   

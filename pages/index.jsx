@@ -10,9 +10,23 @@ const LandPage = () => {
   useEffect(() => {
     // Aquí puedes agregar el código de almacenamiento del token
     const accessToken = 'sin-acceso';
-    const usuario = 'sin-usuario';
+    const id =  '';
+    const username = '';
+    const email =  '';
+    const first_name = '';
+    const last_name = '';
+    const ficha = '';
+    const tipo_usuario = ''; 
     localStorage.setItem('access_token', accessToken);
-    localStorage.setItem('usuario', usuario);
+    localStorage.setItem('id', id);
+    localStorage.setItem('username', username);
+    localStorage.setItem('email', email);
+    localStorage.setItem('first_name', first_name);
+    localStorage.setItem('last_name', last_name);
+    localStorage.setItem('ficha', ficha);
+    localStorage.setItem('tipo_usuario', tipo_usuario);
+
+
   }, []);
   return (
     <LandPageLayout>

@@ -5,16 +5,28 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import '../../styles/pages/fichas.css';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 
 function FichasPage(){
 //----------------Variables---------------------------------
     const [searchTerm, setSearchTerm] = useState('');
     const [originalFichas, setOriginalFichas] = useState([]);
     const [orderedFichas, setOrderedFichas] = useState([]);
+    const [usuario, setUsuario] = useState('');
+    const router = useRouter();
 //----------------Variables---------------------------------
 
 //----Función useEffect asyncrona para obtener la data de fichas-------
     useEffect(() => {
+        //----Función para detectar al usuario ---------
+        if (typeof window !== 'undefined') {
+            const storedUsuario = localStorage.getItem('usuario');
+            setUsuario(storedUsuario);
+          }
+        if (usuario == 'sin-usuario'){
+            router.push('/');
+        }
+//----Función para detectar al usuario ---------
         async function fetchFichas() {
             try {
                 const data = await getFichas();
@@ -28,7 +40,7 @@ function FichasPage(){
         }
 
         fetchFichas();
-    }, [searchTerm]);
+    }, [usuario, router, searchTerm]);
 //----Función useEffect asyncrona para obtener la data de fichas-------
 
 //----Función Handle de busqueda para filtrar por numero y nombre de fichas---

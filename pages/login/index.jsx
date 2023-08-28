@@ -8,6 +8,14 @@ import { useRouter } from 'next/router';
 const LoginPage = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [id, setId] = useState('');
+  const [email, setEmail] = useState('');
+  const [first_name, setFirstName] = useState('');
+  const [last_name, setLastName] = useState('');
+  const [ficha, setFicha] = useState('');
+  const [tipo_usuario, setTipoUsuario] = useState('');
+
+  
   const router = useRouter();
 
   const handleLogin = async () => {
@@ -19,17 +27,47 @@ const LoginPage = () => {
 
       const accessToken = response.data.access;
       console.log('Token de acceso:', accessToken);
-      
-    // Almacena el token en localStorage o en una cookie
-    localStorage.setItem('access_token', accessToken);
-    localStorage.setItem('usuario', username);
 
+      const response2 = await axios.get(`https://miguelpaez9612.pythonanywhere.com/users/${username}/`);
+
+      console.log(response2.data.id);
+      setId(response2.data.id);
+      console.log(response2.data.username);
+      setUsername(response2.data.username);
+      console.log(response2.data.email);
+      setEmail(response2.data.email);
+      console.log(response2.data.first_name);
+      setFirstName(response2.data.first_name);
+      console.log(response2.data.last_name);
+      setLastName(response2.data.last_name);
+      console.log(response2.data.ficha);
+      setFicha(response2.data.ficha);
+      console.log(response2.data.tipo_usuario);
+      setTipoUsuario(response2.data.tipo_usuario);
+
+
+
+      
+      localStorage.setItem('access_token', accessToken);
+      localStorage.setItem('id', id);
+      localStorage.setItem('username', username);
+      localStorage.setItem('email', email);
+      localStorage.setItem('first_name', first_name);
+      localStorage.setItem('last_name', last_name);
+      localStorage.setItem('ficha', ficha);
+      localStorage.setItem('tipo_usuario', tipo_usuario);
     router.push('/home');
 
       // Aquí puedes guardar el token en el almacenamiento local o en una cookie
     } catch (error) {
-      const usuario = 'sin-usuario';
-      localStorage.setItem('usuario', usuario);
+      localStorage.setItem('access_token', 'sin-acceso');
+      localStorage.setItem('id', '');
+      localStorage.setItem('username', '');
+      localStorage.setItem('email', '');
+      localStorage.setItem('first_name', '');
+      localStorage.setItem('last_name', '');
+      localStorage.setItem('ficha', '');
+      localStorage.setItem('tipo_usuario', '');
       alert("Usuario invalido, por favor revisa sus credenciales")
       console.error('Error al iniciar sesión:', error);
     }
@@ -37,6 +75,13 @@ const LoginPage = () => {
 
   return (
     <LoginLayout>
+      {username}
+  {id}
+  {email}
+  {first_name}
+  {last_name}
+  {ficha}
+  {tipo_usuario}
       {/* className={styles.} */}
       <main className={styles.main} >
         <div className={styles.tarjeta}>
