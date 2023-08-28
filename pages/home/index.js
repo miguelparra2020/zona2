@@ -78,7 +78,6 @@ const HomePage = () => {
 
     return (
         <MainLayout>
-            {access_token}
             {/* titulo */}
             <div className="contenedor_titulo_asistencias">
                 <h1>Bienvenid@ al área de asistencias</h1>   
