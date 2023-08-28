@@ -91,3 +91,10 @@ export async function getUsuario(username) {
   const data = await response.json();
   return data;
 }
+
+//----------------------------Modelo---Usuarios-------------------------------
+export async function getUsuarios() {
+  const response = await fetch('https://miguelpaez9612.pythonanywhere.com/users/');
+  const data = await response.json();
+  return data;
+}
