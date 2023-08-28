@@ -11,6 +11,7 @@ const CrearUsuarioPage = () => {
     const [ficha, setFicha] = useState([]);  
     const [fichas, setFichas] = useState([]); 
     const [fichaSeleccionada, setFichaSeleccionada] = useState([]); 
+    // const [tipo, setFichaSeleccionada] = useState([]); 
 
 
     useEffect(() => {
@@ -88,12 +89,19 @@ const CrearUsuarioPage = () => {
             <div>
             Asignar ficha:&nbsp;
             <select value={fichaSeleccionada} onChange={handleFichaChange}>
-                <option value="">Selecciona una ficha</option>
+                <option value="1">Selecciona una ficha</option>
                 {fichas.map((ficha) => (
                     <option key={ficha.url} value={ficha.numero_ficha}>
                         {ficha.numero_ficha}
                     </option>
                 ))}
+            </select>
+            </div>
+            <div>
+            Tipo de usuario:&nbsp;
+            <select value={fichaSeleccionada} onChange={handleFichaChange}>
+                <option value="aprendiz">Aprendiz</option>
+                <option value="instructor">Instructor</option>
             </select>
             </div>
             <button type="submit">Crear usuario</button> 
