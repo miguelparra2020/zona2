@@ -43,10 +43,10 @@ const FooterLandPage = () => {
                 <h2 className={styles.containerfour__h2}>
                   Síguenos
                 </h2>
-                  <Link href="/Login"className={styles.containerfour__link}>
+                  <Link href="https://www.facebook.com/SENARisaralda"className={styles.containerfour__link}>
                     <Image  src="/img/facebook.png" alt="Logo Facebook Blanco" width={80} height={80} className={styles.containerfour__img}/>
                   </Link>
-                  <Link href="/Login" className={styles.containerfour__link}>
+                  <Link href="https://www.instagram.com/senarisaralda/" className={styles.containerfour__link}>
                     <Image  src="/img/instagram.png" alt="Logo Instagram Blanco" width={100} height={80} className={styles.containerfour__img}/>
                   </Link>
               </div>
