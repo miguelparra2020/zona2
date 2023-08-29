@@ -14,7 +14,6 @@ const MiQrPage = () => {
     // ----Constantes y variables de estado-----------
 
     useEffect(() => {
-        // Verificar si estamos en el navegador antes de usar localStorage
         if (typeof window !== 'undefined') {
             setUsername(localStorage.getItem('username'));
             setFicha(localStorage.getItem('ficha'));
