@@ -24,13 +24,12 @@ const MiQrPage = () => {
             
                 <div className="div-contenedor">
                     <div className="qr-container">
-                        <div className="qr-header">
-                            <p className="qr-title"><strong>Ficha:</strong> {ficha}</p>
-                            <p className="qr-title"><strong>ID:</strong> {username}</p>
-                            <p className="qr-title"><strong>Nombre:</strong> {first_name} {last_name}</p>
-                        </div>
-
                         <Suspense fallback={<Loading />}>
+                            <div className="qr-header">
+                                <p className="qr-title"><strong>Ficha:</strong> {ficha}</p>
+                                <p className="qr-title"><strong>ID:</strong> {username}</p>
+                                <p className="qr-title"><strong>Nombre:</strong> {first_name} {last_name}</p>
+                            </div>                        
                             <QRCode className="qr-code" value={username} />
                         </Suspense>
                     </div>
