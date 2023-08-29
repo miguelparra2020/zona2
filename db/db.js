@@ -102,6 +102,24 @@ export async function getSalidas() {
   return data;
 }
 
+//del CRUD - Salida
+//Created 🆕
+//Función para crear un registro de una salida
+
+export async function CreateSalida(salidaData) {
+  const response = await fetch('https://miguelpaez9612.pythonanywhere.com/salidas/', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(salidaData),
+  });
+
+  const data = await response.json();
+  return data;
+}
+
+
 //----------------------------Modelo---Usuario-------------------------------
 
 export async function getUsuario(username) {

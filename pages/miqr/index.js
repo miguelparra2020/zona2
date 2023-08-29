@@ -13,6 +13,7 @@ const MiQrPage = () => {
     const [last_name, setLastName] = useState('');
     // ----Constantes y variables de estado-----------
 
+    // ----Función useEffects --------------------
     useEffect(() => {
         if (typeof window !== 'undefined') {
             setUsername(localStorage.getItem('username'));
@@ -21,7 +22,7 @@ const MiQrPage = () => {
             setLastName(localStorage.getItem('last_name'));
         }
     }, []);
-
+    // ----Función useEffects --------------------
     
     return (
         <MainLayout>
