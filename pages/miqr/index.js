@@ -14,11 +14,14 @@ const MiQrPage = () => {
     // ----Constantes y variables de estado-----------
 
     useEffect(() => {
-        setUsername(localStorage.getItem('username'));
-        setFicha(localStorage.getItem('ficha'));
-        setFirstName(localStorage.getItem('first_name'));
-        setLastName(localStorage.getItem('last_name'));
-    },[]);
+        // Verificar si estamos en el navegador antes de usar localStorage
+        if (typeof window !== 'undefined') {
+            setUsername(localStorage.getItem('username'));
+            setFicha(localStorage.getItem('ficha'));
+            setFirstName(localStorage.getItem('first_name'));
+            setLastName(localStorage.getItem('last_name'));
+        }
+    }, []);
 
     
     return (
