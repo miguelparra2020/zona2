@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect}from "react";
 import MainLayout from '../../components/layouts/MainLayout';
 import QRCode from 'react-qr-code';
 import { Suspense } from 'react';
@@ -6,10 +6,21 @@ import '../../styles/pages/home.css';
 import '../../styles/pages/miqr.css';
 
 const MiQrPage = () => {
-    const username = localStorage.getItem('username');
-    const ficha = localStorage.getItem('ficha');
-    const first_name = localStorage.getItem('first_name');
-    const last_name = localStorage.getItem('last_name');
+    // ----Constantes y variables de estado-----------
+    const [username, setUsername] = useState('');
+    const [ficha, setFicha] = useState('');
+    const [first_name, setFirstName] = useState('');
+    const [last_name, setLastName] = useState('');
+    // ----Constantes y variables de estado-----------
+
+    useEffect(() => {
+        setUsername(localStorage.getItem('username'));
+        setFicha(localStorage.getItem('ficha'));
+        setFirstName(localStorage.getItem('first_name'));
+        setLastName(localStorage.getItem('last_name'));
+    },[]);
+
+    
     return (
         <MainLayout>
             <div >
