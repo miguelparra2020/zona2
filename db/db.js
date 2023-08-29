@@ -75,6 +75,24 @@ export async function getIngresos() {
   return data;
 }
 
+//del CRUD - Ingresos
+//Created 🆕
+//Función para crear un registro de ingreso
+
+export async function CreateIngreso(ingresoData) {
+  const response = await fetch('https://miguelpaez9612.pythonanywhere.com/ingresos/', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(ingresoData),
+  });
+
+  const data = await response.json();
+  return data;
+}
+
+
 //----------------------------Modelo---Salidas-------------------------------
 
 //Función para obtener todas las salidas, de la base de datos es un READ - lectura

@@ -1,3 +1,4 @@
+// --------Importaciones y librerías--------------
 import React from "react";
 import MainLayout from '../../components/layouts/MainLayout';
 import { getIngresos, getSalidas, getUsuario } from '../../db/db';
@@ -7,8 +8,10 @@ import '../../styles/pages/home.css';
 import Image from 'next/image'
 import { Suspense } from 'react';
 import { useRouter } from 'next/router';
+import '../../styles/pages/fichas.css';
+// --------Importaciones y librerías--------------
 
-
+// ----Función de exportar el componente---------
 const HomePage = () => {
 
 //---------------Variables------------------------------------------------- 
@@ -147,133 +150,208 @@ const HomePage = () => {
 
                 {/* registros de ingresos*/}
                 <div className="contenedor_registro_ingresos">
+
+                    {/* Botón de crear un nuevo ingreso */}
+                    <div className="div_button_editar_ficha">
+                                <Link href={`/home/ingresos`} className="edit_link_ficha">Crear un nuevo ingreso &nbsp;
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-in-right" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0v-2z"/>
+  <path fill-rule="evenodd" d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
+                                </svg></Link>
+                    </div>
+                    {/* Botón de crear un nuevo ingreso */}
+
+                    {/* titulo registro de ingresos */}
                     <div className="div_titulo_registros">
                         <h1>Registros de ingresos</h1> 
                     </div>
-                    <div className="div_contenedor_card_registros">
-                    {ingresos.filter((ingreso) => {
-                            if (!fechaInicioFiltro || !fechaFinFiltro) return true; // Mostrar todo si no se ingresaron fechas
-                            return (
-                                ingreso.fecha_ingreso >= fechaInicioFiltro &&
-                                ingreso.fecha_ingreso <= fechaFinFiltro
-                            );
-                        })
-                        .map((ingreso) => {
-                    // Extraer el ID de la URL
-                    const urlParts = ingreso.url.split('/');
-                    const id = urlParts[urlParts.length - 2]; // Suponemos que el ID está antes del último slash
+                    {/* titulo registro de ingresos */}
 
-                    return (
-                            <div key={ingreso.url}>
-                                <div className="div_card">
-                                    <div className="div_card_header">
-                                        <Image 
-                                        src="https://res.cloudinary.com/unidigital/image/upload/v1692931577/biometric%20services/acceso_wmsdly.png" alt="Icono de ingresos" 
-                                        width={30}
-                                        height={30}  />
-                                        &nbsp;&nbsp;                               
-                                        <p><strong>Id ingreso:</strong> {id}</p>
+                    {/* mapeo de todos los registros de ingreso */}
+                    <div className="div_contenedor_card_registros">
+                        
+                        {/* mapeo con filtro */}
+                        <Suspense fallback={<Loading />}>
+                            {ingresos.filter((ingreso) => {
+                                    if (!fechaInicioFiltro || !fechaFinFiltro) return true; // Mostrar todo si no se ingresaron fechas
+                                    return (
+                                        ingreso.fecha_ingreso >= fechaInicioFiltro &&
+                                        ingreso.fecha_ingreso <= fechaFinFiltro
+                                    );
+                                })
+                                .map((ingreso) => {
+                            // Extraer el ID de la URL
+                            const urlParts = ingreso.url.split('/');
+                            const id = urlParts[urlParts.length - 2]; // Suponemos que el ID está antes del último slash
+
+                            return (
+                                <div key={ingreso.url}>
+                                    {/* card completa */}
+                                    <div className="div_card">
+
+                                        {/* div header img - id */}
+                                        <div className="div_card_header">
+                                            <Image 
+                                            src="https://res.cloudinary.com/unidigital/image/upload/v1692931577/biometric%20services/acceso_wmsdly.png" alt="Icono de ingresos" 
+                                            width={30}
+                                            height={30}  />
+                                            &nbsp;&nbsp;                               
+                                            <p><strong>Id ingreso:</strong> {id}</p>
+                                        </div>
+                                        {/* div header img - id */}
+
+                                        {/* div con usuario y nombre */}
+                                        <div className="div_card_usuario">
+                                            <p className="div_card_usuario_ind">
+                                                <strong>▫ Usuario:</strong> {ingreso.username}</p>
+                                            <p className="div_card_usuario_ind">
+                                                <strong>Nombre:</strong> <span className="div_card_usuario_nombre">Miguel Ángel Páez parra</span> </p>
+                                        </div>
+                                        {/* div con usuario y nombre */}
+
+                                        {/* Div con fecha y hora de ingreso */}
+                                        <div className="div_card_usuario">
+                                            <p className="div_card_usuario_ind">
+                                                <strong>▫ Fecha de ingreso:</strong> {ingreso.fecha_ingreso}</p>
+                                            <p className="div_card_usuario_ind">
+                                                <strong>Hora de ingreso:</strong> {ingreso.hora_ingreso}</p>
+                                        </div>
+                                        {/* Div con fecha y hora de ingreso */}
+
+                                        {/* Div con ficha y zona */}
+                                        <div className="div_card_usuario">
+                                            <p className="div_card_usuario_ind">
+                                                <strong>▫ Ficha:</strong> 2465417
+                                            </p>
+                                            <p className="div_card_usuario_ind">
+                                                <strong>Zona:</strong> {ingreso.zona}
+                                            </p>
+                                        </div>
+                                        {/* Div con ficha y zona */}
+
+                                        {/* botón editar registro */}
+                                        <div className="div_card_usuario_button_editar">
+                                            <Link href={`/home/ingresos/${id}`}className="edit_link">Editar &nbsp;
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"  viewBox="0 0 16 16">
+    <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+    <path  d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                                            </svg></Link>
+                                        </div>
+                                        {/* botón editar registro */}
+                                        
                                     </div>
-                                    <div className="div_card_usuario">
-                                        <p className="div_card_usuario_ind">
-                                            <strong>▫ Usuario:</strong> {ingreso.username}</p>
-                                        <p className="div_card_usuario_ind">
-                                            <strong>Nombre:</strong> <span className="div_card_usuario_nombre">Miguel Ángel Páez parra</span> </p>
-                                    </div>
-                                    <div className="div_card_usuario">
-                                        <p className="div_card_usuario_ind">
-                                            <strong>▫ Fecha de ingreso:</strong> {ingreso.fecha_ingreso}</p>
-                                        <p className="div_card_usuario_ind">
-                                            <strong>Hora de ingreso:</strong> {ingreso.hora_ingreso}</p>
-                                    </div>
-                                    <div className="div_card_usuario">
-                                        <p className="div_card_usuario_ind">
-                                            <strong>▫ Ficha:</strong> 2465417
-                                        </p>
-                                        <p className="div_card_usuario_ind">
-                                            <strong>Zona:</strong> {ingreso.zona}
-                                        </p>
-                                    </div>
-                                    <div className="div_card_usuario_button_editar">
-                                        <Link href={`/home/ingresos/${id}`}className="edit_link">Editar &nbsp;
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"  viewBox="0 0 16 16">
-  <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
-  <path  d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
-</svg></Link>
-                                    </div>
+                                    {/* card completa */}
                                     
                                 </div>
-                            </div>
-                            );
-                        })}
+                                );
+                            })}
+                        </Suspense>
                     </div>
+                    {/* mapeo de todos los registros de ingreso */}
+
                 </div>
                 {/* registros de ingresos*/}
 
                 {/* registros de salidas*/}
                 <div className="contenedor_registro_ingresos">
+                    {/* Botón de crear una nueva salida */}
+                    <div className="div_button_editar_ficha">
+                                <Link href={`/home/salidas`} className="edit_link_ficha">Crear una nueva salida &nbsp;
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"/>
+  <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
+                                </svg></Link>
+                    </div>
+                    {/* Botón de crear una nueva salida */}
+                    
+                    {/* titulo registro de salidas */}
                     <div className="div_titulo_registros">
                         <h1>Registros de Salidas</h1>  
                     </div>
-                    <div className="div_contenedor_card_registros">
-                    <Suspense fallback={<Loading />}>
-                    {salidas
-                        .filter((salida) => {
-                            if (!fechaInicioFiltro || !fechaFinFiltro) return true; // Mostrar todo si no se ingresaron fechas
-                            return (
-                                salida.fecha_salida >= fechaInicioFiltro &&
-                                salida.fecha_salida <= fechaFinFiltro
-                            );
-                        })
-                        .map((salida) => {
-                        // Extraer el ID de la URL
-                        const urlParts = salida.url.split('/');
-                        const id = urlParts[urlParts.length - 2]; // Suponemos que el ID está antes del último slash
+                    {/* titulo registro de salidas */}
 
-                        return (
-                            <div key={salida.url}>
-                            <div className="div_card">
-                                <div className="div_card_header">
-                                    <Image 
-                                    src="https://res.cloudinary.com/unidigital/image/upload/v1692931577/biometric%20services/cerrar-sesion_wlgj16.png" alt="Icono de ingresos" 
-                                    width={30}
-                                    height={30}  />
-                                    &nbsp;&nbsp;                               
-                                    <p><strong>Id salida:</strong> {id}</p>
-                                </div>
-                                <div className="div_card_usuario">
-                                    <p className="div_card_usuario_ind">
-                                        <strong>▫ Usuario:</strong> {salida.username}</p>
-                                    <p className="div_card_usuario_ind">
-                                        <strong>Nombre:</strong> <span className="div_card_usuario_nombre">Miguel Ángel Páez parra</span> </p>
-                                </div>
-                                <div className="div_card_usuario">
-                                    <p className="div_card_usuario_ind">
-                                        <strong>▫ Fecha de salida:</strong> {salida.fecha_salida}</p>
-                                    <p className="div_card_usuario_ind">
-                                        <strong>Hora de salida:</strong> {salida.hora_salida}</p>
-                                </div>
-                                <div className="div_card_usuario">
-                                    <p className="div_card_usuario_ind">
-                                        <strong>▫ Ficha:</strong> 2465417
-                                    </p>
-                                    <p className="div_card_usuario_ind">
-                                        <strong>Zona:</strong> {salida.zona}
-                                    </p>
-                                </div>
-                                <div className="div_card_usuario_button_editar">
-                                    <Link href={`/home/salidas/${id}`}className="edit_link">Editar &nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"  viewBox="0 0 16 16">
-<path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
-<path  d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
-</svg></Link>
-                                </div>
-                                
-                            </div>
-                        </div>
-                                );
-                            })}
-                    </Suspense>
-                    </div>                    
+                    {/* mapeo de todos los registros de salida */}
+                    <div className="div_contenedor_card_registros">
+                        {/* mapeo con filtro */}
+                        <Suspense fallback={<Loading />}>
+                            {salidas
+                                .filter((salida) => {
+                                    if (!fechaInicioFiltro || !fechaFinFiltro) return true; // Mostrar todo si no se ingresaron fechas
+                                    return (
+                                        salida.fecha_salida >= fechaInicioFiltro &&
+                                        salida.fecha_salida <= fechaFinFiltro
+                                    );
+                                })
+                                .map((salida) => {
+                                // Extraer el ID de la URL
+                                const urlParts = salida.url.split('/');
+                                const id = urlParts[urlParts.length - 2]; // Suponemos que el ID está antes del último slash
+
+                                return (
+                                    <div key={salida.url}>
+                                        {/* card completa */}
+                                        <div className="div_card">
+
+                                            {/* div header img - id */}
+                                            <div className="div_card_header">
+                                                <Image 
+                                                src="https://res.cloudinary.com/unidigital/image/upload/v1692931577/biometric%20services/cerrar-sesion_wlgj16.png" alt="Icono de ingresos" 
+                                                width={30}
+                                                height={30}  />
+                                                &nbsp;&nbsp;                               
+                                                <p><strong>Id salida:</strong> {id}</p>
+                                            </div>
+                                            {/* div header img - id */}
+
+                                            {/* div con usuario y nombre */}
+                                            <div className="div_card_usuario">
+                                                <p className="div_card_usuario_ind">
+                                                    <strong>▫ Usuario:</strong> {salida.username}</p>
+                                                <p className="div_card_usuario_ind">
+                                                    <strong>Nombre:</strong> <span className="div_card_usuario_nombre">Miguel Ángel Páez parra</span> </p>
+                                            </div>
+                                            {/* div con usuario y nombre */}
+
+                                            {/* Div fecha y hora de ingreso */}
+                                            <div className="div_card_usuario">
+                                                <p className="div_card_usuario_ind">
+                                                    <strong>▫ Fecha de salida:</strong> {salida.fecha_salida}</p>
+                                                <p className="div_card_usuario_ind">
+                                                    <strong>Hora de salida:</strong> {salida.hora_salida}</p>
+                                            </div>
+                                            {/* Div fecha y hora de ingreso */}
+
+                                            {/* Div con ficha y zona */}
+                                            <div className="div_card_usuario">
+                                                <p className="div_card_usuario_ind">
+                                                    <strong>▫ Ficha:</strong> 2465417
+                                                </p>
+                                                <p className="div_card_usuario_ind">
+                                                    <strong>Zona:</strong> {salida.zona}
+                                                </p>
+                                            </div>
+                                            {/* Div con ficha y zona */}
+
+                                            {/* botón editar registro */}
+                                            <div className="div_card_usuario_button_editar">
+                                                <Link href={`/home/salidas/${id}`}className="edit_link">Editar &nbsp;
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"  viewBox="0 0 16 16">
+            <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+            <path  d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                                                </svg></Link>
+                                            </div>
+                                            {/* botón editar registro */}
+                                            
+                                        </div>
+                                        {/* card completa */}
+                                    </div>
+                                        );
+                                    })}
+                        </Suspense>
+                        {/* mapeo con filtro */}
+                    </div>
+                    {/* mapeo de todos los registros de salida */}
+
                 </div>
                 {/* registros de salidas*/}
 
@@ -284,7 +362,10 @@ const HomePage = () => {
 };
 
 export default HomePage;
+// ----Función de exportar el componente---------
 
+//---Función en caso de no carga de datos
 function Loading() {
     return <h2>🌀 Loading...</h2>;
-  }
+}
+//---Función en caso de no carga de datos
