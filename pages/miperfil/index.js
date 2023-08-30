@@ -40,7 +40,7 @@ const MiPerfilPage = () => {
                 <div className="div-contenedor">
                     <div className="qr-container">
                         <Suspense fallback={<Loading />}>
-                            <div > 
+                            <div className='icon-header'> 
                                  <Image 
                                         src="https://res.cloudinary.com/unidigital/image/upload/v1693070445/biometric%20services/ficha-de-datos-de-seguridad_gjl0dh.png" alt="Icono de fichas" 
                                         width={30}
