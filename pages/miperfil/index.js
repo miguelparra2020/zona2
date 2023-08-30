@@ -3,6 +3,7 @@ import MainLayout from '../../components/layouts/MainLayout';
 import { Suspense } from 'react';
 import '../../styles/pages/home.css';
 import '../../styles/pages/miperfil.css';
+import Image from 'next/image';
 
 const MiPerfilPage = () => {
     // ----Constantes y variables de estado-----------
@@ -39,6 +40,12 @@ const MiPerfilPage = () => {
                 <div className="div-contenedor">
                     <div className="qr-container">
                         <Suspense fallback={<Loading />}>
+                            <div > 
+                                 <Image 
+                                        src="https://res.cloudinary.com/unidigital/image/upload/v1693070445/biometric%20services/ficha-de-datos-de-seguridad_gjl0dh.png" alt="Icono de fichas" 
+                                        width={30}
+                                        height={30}  />
+                            </div>
                             <div className="qr-header">
                                 <p className="qr-title"><strong>Usuario:</strong> {username}</p>
                                 <p className="qr-title"><strong>Nombres:</strong> {first_name}</p>
