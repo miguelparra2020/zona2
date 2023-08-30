@@ -2,7 +2,7 @@ import React, {useState, useEffect}from "react";
 import MainLayout from '../../components/layouts/MainLayout';
 import { Suspense } from 'react';
 import '../../styles/pages/home.css';
-import '../../styles/pages/miqr.css';
+import '../../styles/pages/miperfil.css';
 
 const MiPerfilPage = () => {
     // ----Constantes y variables de estado-----------
