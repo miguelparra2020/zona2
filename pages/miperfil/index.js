@@ -1,6 +1,5 @@
 import React, {useState, useEffect}from "react";
 import MainLayout from '../../components/layouts/MainLayout';
-import QRCode from 'react-qr-code';
 import { Suspense } from 'react';
 import '../../styles/pages/home.css';
 import '../../styles/pages/miqr.css';
@@ -41,7 +40,6 @@ const MiPerfilPage = () => {
                                 <p className="qr-title"><strong>ID:</strong> {username}</p>
                                 <p className="qr-title"><strong>Nombre:</strong> {first_name} {last_name}</p>
                             </div>                        
-                            <QRCode className="qr-code" value={username} />
                         </Suspense>
                     </div>
                 </div>
