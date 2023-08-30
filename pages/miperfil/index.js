@@ -46,13 +46,13 @@ const MiPerfilPage = () => {
                                         width={30}
                                         height={30}  />
                             </div>
-                            <div className="qr-header">
-                                <p className="qr-title"><strong>Usuario:</strong> {username}</p>
-                                <p className="qr-title"><strong>Nombres:</strong> {first_name}</p>
-                                <p className="qr-title"><strong>Apellidos:</strong> {last_name}</p>
-                                <p className="qr-title"><strong>Correo:</strong> {email}</p>
-                                <p className="qr-title"><strong>Ficha:</strong> {ficha}</p>
-                                <p className="qr-title"><strong>Tipo de usuario:</strong> {tipo_usuario}</p>                                
+                            <div className="perfil-header">
+                                <p className="perfil-title"><strong>Usuario:</strong> {username}</p>
+                                <p className="perfil-title"><strong>Nombres:</strong> {first_name}</p>
+                                <p className="perfil-title"><strong>Apellidos:</strong> {last_name}</p>
+                                <p className="perfil-title"><strong>Correo:</strong> {email}</p>
+                                <p className="perfil-title"><strong>Ficha:</strong> {ficha}</p>
+                                <p className="perfil-title"><strong>Tipo de usuario:</strong> {tipo_usuario}</p>                                
                             </div>                        
                         </Suspense>
                     </div>
