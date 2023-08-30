@@ -40,6 +40,26 @@
   align-items: center;
   justify-content: center;
 }
+
+.div_button_editar_perfil{
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.edit_link_perfil{
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
   
   .qr-info {
     font-size: 14px;
