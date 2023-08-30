@@ -55,6 +55,9 @@ const MiPerfilPage = () => {
                                 <p className="perfil-title"><strong>Ficha:</strong> {ficha}</p>
                                 <p className="perfil-title"><strong>Tipo de usuario:</strong> {tipo_usuario}</p>                                
                             </div>  
+                            <div>
+                                           Editar 
+                            </div>
                             <div className="div_button_editar_perfil">
                                 <Link className="edit_link_perfil"> Editar &nbsp;
                                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"  viewBox="0 0 16 16">
