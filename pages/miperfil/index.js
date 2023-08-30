@@ -4,6 +4,7 @@ import { Suspense } from 'react';
 import '../../styles/pages/home.css';
 import '../../styles/pages/miperfil.css';
 import Image from 'next/image';
+import Link from "next/link";
 
 const MiPerfilPage = () => {
     // ----Constantes y variables de estado-----------
