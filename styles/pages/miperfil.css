@@ -35,6 +35,11 @@
     font-size: 18px;
     margin: 0;
   }
+.icon-header{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
   
   .qr-info {
     font-size: 14px;
