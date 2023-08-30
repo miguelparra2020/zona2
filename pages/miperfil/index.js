@@ -47,7 +47,6 @@ const MiPerfilPage = () => {
                                         height={30}  />
                             </div>
                             <br/>
-                            <br/>
                             <div className="perfil-header">
                                 <p className="perfil-title"><strong>Usuario:</strong> {username}</p>
                                 <p className="perfil-title"><strong>Nombres:</strong> {first_name}</p>
