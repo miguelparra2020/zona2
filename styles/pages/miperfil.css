@@ -26,12 +26,12 @@
   margin: 10px;
 }
 /* Estilos para el encabezado del código QR */
-.qr-header {
+.perfil-header {
     text-align: left;
     margin-bottom: 20px;
   }
   
-  .qr-title {
+  .perfil-title {
     font-size: 18px;
     margin: 0;
   }
