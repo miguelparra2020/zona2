@@ -10,6 +10,8 @@ const MiPerfilPage = () => {
     const [ficha, setFicha] = useState('');
     const [first_name, setFirstName] = useState('');
     const [last_name, setLastName] = useState('');
+    const [email, setEmail] = useState('');
+    const [tipo_usuario, setTipoUsuario] = useState('');
     // ----Constantes y variables de estado-----------
 
     // ----Función useEffects --------------------
@@ -19,6 +21,8 @@ const MiPerfilPage = () => {
             setFicha(localStorage.getItem('ficha'));
             setFirstName(localStorage.getItem('first_name'));
             setLastName(localStorage.getItem('last_name'));
+            setEmail(localStorage.getItem('email'));
+            setTipoUsuario(localStorage.getItem('tipo_usuario'));
         }
     }, []);
     // ----Función useEffects --------------------
@@ -36,9 +40,12 @@ const MiPerfilPage = () => {
                     <div className="qr-container">
                         <Suspense fallback={<Loading />}>
                             <div className="qr-header">
+                                <p className="qr-title"><strong>Usuario:</strong> {username}</p>
+                                <p className="qr-title"><strong>Nombres:</strong> {first_name}</p>
+                                <p className="qr-title"><strong>Apellidos:</strong> {last_name}</p>
+                                <p className="qr-title"><strong>Correo:</strong> {email}</p>
                                 <p className="qr-title"><strong>Ficha:</strong> {ficha}</p>
-                                <p className="qr-title"><strong>ID:</strong> {username}</p>
-                                <p className="qr-title"><strong>Nombre:</strong> {first_name} {last_name}</p>
+                                <p className="qr-title"><strong>Tipo de usuario:</strong> {tipo_usuario}</p>                                
                             </div>                        
                         </Suspense>
                     </div>
