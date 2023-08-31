@@ -3,6 +3,7 @@ import React,{useState, useEffect} from "react";
 import MainLayout from '../../../components/layouts/MainLayout';
 import {CreateIngreso, getUsuarios} from '../../../db/db';
 import { useRouter } from 'next/router';
+import '../../../styles/pages/ingresos.css'
 // ----Importaciones y librerías---------
 
 
