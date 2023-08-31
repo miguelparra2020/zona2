@@ -73,7 +73,7 @@ const IngresosPage = () => {
         <MainLayout>
             <div className="titulo-ingresos">
                 <h1>Bienvenid@ al área de ingresos</h1>  
-                <h3>Crea un incrego de manera manual</h3>
+                <h3>Crea un ingreso de manera manual</h3>
             </div>            
             {/* formulario de creación de ingreso */}
             <div>

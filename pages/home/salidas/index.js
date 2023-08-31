@@ -3,6 +3,7 @@ import React,{useState, useEffect} from "react";
 import MainLayout from '../../../components/layouts/MainLayout';
 import {CreateSalida, getUsuarios} from '../../../db/db';
 import { useRouter } from 'next/router';
+import '../../../styles/pages/ingresos.css'
 // ----Importaciones y librerías---------
 
 
@@ -92,29 +93,30 @@ const SalidasPage = () => {
     return (
         <MainLayout>
             {/* titulo del área */}
-            <div>
-                <h1>Bienvenid@ al area de salidas</h1>                
+            <div className="titulo-ingresos">
+                <h1>Bienvenid@ al área de salidas</h1>  
+                <h3>Crea una salida de manera manual</h3>
             </div>      
             {/* titulo del área */}
 
             {/* formulario de creación de ingreso */}
             <div>
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={handleSubmit} className="container">
                     <div>
                     Número de documento identidad = usuario: &nbsp;
-                    <input type="number" value={username} onChange={(e) => setUsername(e.target.value)} />
+                    <input type="number" value={username} onChange={(e) => setUsername(e.target.value)} className="inputs-ingresos" required/>
                     </div>
                     <div>
                     Fecha de salida: &nbsp;
-                    <input type="date" value={fecha_salida} onChange={(e) => setFechaSalida(e.target.value)} />
+                    <input type="date" value={fecha_salida} onChange={(e) => setFechaSalida(e.target.value)} className="inputs-ingresos" required/>
                     </div>
                     <div>
                     Hora de salida :&nbsp;
-                    <input type="time" value={hora_salida} onChange={(e) => setHoraSalida(e.target.value)} />
+                    <input type="time" value={hora_salida} onChange={(e) => setHoraSalida(e.target.value)} className="inputs-ingresos" required/>
                     </div>
                     <div>
                     Zona de la que sale el usuario: &nbsp;
-                    <input type="text" value={zona} onChange={(e) => setZona(e.target.value)} />
+                    <input type="text" value={zona} onChange={(e) => setZona(e.target.value)} className="inputs-ingresos" required/>
                     </div>
                     <button type="submit">Crear salida</button> 
                 </form>
