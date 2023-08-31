@@ -114,7 +114,7 @@ const IngresosPage = () => {
                     </div>
                     <div>
                     Zona a la que ingresa: &nbsp;
-                    <input type="text" value={zona} onChange={(e) => setZona(e.target.value)}  className="inputs-ingresos"required/>
+                    <input type="text" value={zona} onChange={(e) => setZona(e.target.value)}  className="inputs-ingresos" required/>
                     </div>
                     <button type="submit">Crear ingreso</button> 
                 </form>
