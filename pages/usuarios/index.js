@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import MainLayout from '../../components/layouts/MainLayout';
 import { getUsuarios } from '../../db/db';
 import Link from "next/link";
-import '../../styles/pages/ingresos.css'
+import '../../styles/pages/usuarios.css'
 
 const UsuariosPage = () => {
     const [usuarios, setUsuarios] = useState([]);
@@ -23,17 +23,17 @@ const UsuariosPage = () => {
 
     return (
         <MainLayout>
-            <div>
-                <h1>Hola soy Usuarios</h1>
+            <div className="contenedor_titulo_fichas">
+                <h1>Bienvenid@ al área de usuarios</h1>
             </div>
-            <div>
-                <Link href="/usuarios/nuevo">
-                <button>Crear nuevo usuario</button>
+            <div className="div-links">
+                <Link href="/usuarios/nuevo" className="links">
+                <button className="edit_link_ficha">Crear nuevo usuario</button>
                 </Link> 
             </div>
-            <div>
+            <div className="contenedor_fichas">
                 {usuarios.map((item) => (
-                    <div key={item.id}>
+                    <div key={item.id} className="div_card_fichas">
                         {item.id} &nbsp;
                         {item.username} &nbsp;
                         {item.first_name} &nbsp;
