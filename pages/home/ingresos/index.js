@@ -102,19 +102,19 @@ const IngresosPage = () => {
                 <form onSubmit={handleSubmit} className="container">
                     <div>
                     Número de documento identidad = usuario: &nbsp;
-                    <input type="number" value={username} onChange={(e) => setUsername(e.target.value)} />
+                    <input type="number" value={username} onChange={(e) => setUsername(e.target.value)} className="inputs-ingresos" required />
                     </div>
                     <div>
                     Fecha de ingreso: &nbsp;
-                    <input type="date" value={fecha_ingreso} onChange={(e) => setFechaIngreso(e.target.value)} />
+                    <input type="date" value={fecha_ingreso} onChange={(e) => setFechaIngreso(e.target.value)} className="inputs-ingresos" required/>
                     </div>
                     <div>
                     Hora de ingreso :&nbsp;
-                    <input type="time" value={hora_ingreso} onChange={(e) => setHoraIngreso(e.target.value)} />
+                    <input type="time" value={hora_ingreso} onChange={(e) => setHoraIngreso(e.target.value)} className="inputs-ingresos" required/>
                     </div>
                     <div>
                     Zona a la que ingresa: &nbsp;
-                    <input type="text" value={zona} onChange={(e) => setZona(e.target.value)} />
+                    <input type="text" value={zona} onChange={(e) => setZona(e.target.value)}  className="inputs-ingresos"required/>
                     </div>
                     <button type="submit">Crear ingreso</button> 
                 </form>

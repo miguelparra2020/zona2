@@ -32,6 +32,13 @@ body {
     border-radius: 3px;
     margin: 1%;
   }
+  .inputs-ingresos{
+    width: 95%;
+    padding: 10px;
+    border: 1px solid #cecfff;
+    border-radius: 3px;
+    margin: 1%;
+  }
   
   button {
     background-color: #007bff;
