@@ -54,28 +54,6 @@ const IngresosPage = () => {
         }
         // ---Validación que el usuario exista----------
 
-        //--validación de campos vacios---------------
-        if (username == '') {
-            alert('Por favor ingrese un usuario!');
-            return;
-        }
-
-        if (fecha_ingreso == '') {
-            alert('Por favor ingrese una fecha de ingreso!');
-            return;
-        }
-
-        if (hora_ingreso == '') {
-            alert('Por favor ingrese una hora de ingreso!');
-            return;
-        }
-
-        if (zona == '') {
-            alert('Por favor ingrese una zona de ingreso!');
-            return;
-        }
-         //--validación de campos vacios---------------
-
 
 
         // -----envío de la data por post------
