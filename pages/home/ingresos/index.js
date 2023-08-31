@@ -95,11 +95,11 @@ const IngresosPage = () => {
         <MainLayout>
             <div className="titulo-ingresos">
                 <h1>Bienvenid@ al área de ingresos</h1>  
-                <h3>Crea un increso de manera manual</h3>
+                <h3>Crea un incrego de manera manual</h3>
             </div>            
             {/* formulario de creación de ingreso */}
             <div>
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={handleSubmit} className="container">
                     <div>
                     Número de documento identidad = usuario: &nbsp;
                     <input type="number" value={username} onChange={(e) => setUsername(e.target.value)} />
