@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import MainLayout from '../../components/layouts/MainLayout';
 import { getUsuarios } from '../../db/db';
 import Link from "next/link";
+import '../../styles/pages/ingresos.css'
 
 const UsuariosPage = () => {
     const [usuarios, setUsuarios] = useState([]);

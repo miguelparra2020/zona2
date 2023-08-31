@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import MainLayout from '../../../components/layouts/MainLayout';
 import { getUsuarios, getFichas, CreateUsuario } from '../../../db/db';
 import { useRouter } from 'next/router';
+import '../../../styles/pages/ingresos.css'
 
 const CrearUsuarioPage = () => {
     const [existeUsuario, setExisteUsuario] = useState(''); 
@@ -120,30 +121,30 @@ const CrearUsuarioPage = () => {
         <div>
             {/* <h3><Link href="/fichas">Volver</Link></h3> */}
         </div>
+        <div className="titulo-ingresos">
+                <h1>Bienvenid@ al área de crear usuarios</h1>  
+            </div> 
         <div>
-            <h1>Crear Usuario</h1>
-        </div>
-        <div>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className="container">
             <div>
             Número de documento identidad = usuario:&nbsp;
-            <input type="number" value={username} onChange={(e) => setUsername(e.target.value)} />
+            <input type="number" value={username} onChange={(e) => setUsername(e.target.value)} className="inputs-ingresos" required/>
             </div>
             <div>
             Nombres:&nbsp;
-            <input type="text" value={first_name} onChange={(e) => setFirstName(e.target.value)} />
+            <input type="text" value={first_name} onChange={(e) => setFirstName(e.target.value)} className="inputs-ingresos" required/>
             </div>
             <div>
             Apellidos:&nbsp;
-            <input type="text" value={last_name} onChange={(e) => setLastName(e.target.value)} />
+            <input type="text" value={last_name} onChange={(e) => setLastName(e.target.value)} className="inputs-ingresos" required/>
             </div>
             <div>
             Email:&nbsp;
-            <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+            <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} className="inputs-ingresos" required/>
             </div>
             <div>
             Asignar ficha:&nbsp;
-            <select value={fichaSeleccionada} onChange={handleFichaChange}>
+            <select value={fichaSeleccionada} className="inputs-ingresos" required onChange={handleFichaChange}>
                 <option value="">Selecciona una ficha</option>
                 {fichas.map((ficha) => (
                     <option key={ficha.url} value={ficha.numero_ficha}>
@@ -154,7 +155,7 @@ const CrearUsuarioPage = () => {
             </div>
             <div>
             Tipo de usuario:&nbsp;
-            <select value={tipo_usuario} onChange={handleTipoUsuarioChange}>
+            <select value={tipo_usuario} className="inputs-ingresos" required onChange={handleTipoUsuarioChange}>
                 <option value="">Seleccionar Tipo de Usuario</option>
                 <option value="aprendiz">Aprendiz</option>
                 <option value="instructor">Instructor</option>
@@ -164,11 +165,11 @@ const CrearUsuarioPage = () => {
             </div>
             <div>
             Contraseña:&nbsp;
-            <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+            <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} className="inputs-ingresos" required/>
             </div>
             <div>
             Confirmar contraseña:&nbsp;
-            <input type="password" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
+            <input type="password" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} className="inputs-ingresos" required/>
             </div>
             <button type="submit">Crear usuario</button> 
         </form>
