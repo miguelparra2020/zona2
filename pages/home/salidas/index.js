@@ -53,30 +53,6 @@ const SalidasPage = () => {
         }
         // ---Validación que el usuario exista----------
 
-        //--validación de campos vacios---------------
-        if (username == '') {
-            alert('Por favor ingrese un usuario!');
-            return;
-        }
-
-        if (fecha_salida == '') {
-            alert('Por favor ingrese una fecha de salida!');
-            return;
-        }
-
-        if (hora_salida == '') {
-            alert('Por favor ingrese una hora de salida!');
-            return;
-        }
-
-        if (zona == '') {
-            alert('Por favor ingrese una zona de salida!');
-            return;
-        }
-         //--validación de campos vacios---------------
-
-
-
         // -----envío de la data por post------
         const enviarData =  CreateSalida(salidaData);
         alert('Registro de salida exitoso');
