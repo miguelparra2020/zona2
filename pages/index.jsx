@@ -1,6 +1,7 @@
 import  LoginLayout from '../components/layouts/LoginLayout';
 import React, { useState, useEffect } from 'react';
 import dynamic from 'next/dynamic';
+import Link from 'next/link';
 
 const DynamicQrReader = dynamic(() => import('react-qr-scanner'), { ssr: false });
 
@@ -21,6 +22,12 @@ const IndexPage = () => {
     setScanning(false);
   };
 
+  const reiniciar = () => {
+    setResult(null); // Reiniciar el resultado
+    setScanning(true); // Activar el escaneo nuevamente
+  };
+
+
   useEffect(() => {
     setScanning(true);
   }, []);
@@ -28,7 +35,17 @@ const IndexPage = () => {
 
   return (
     <LoginLayout>
-      Hola soy Index Zona 1
+      <div>
+        <h1>Bienvenid@ a la Zona 1</h1>
+        <h3>Por favor escanear el código Qr de la aplicación</h3>
+      </div>
+      {result && (
+        <div>
+          <button onClick={reiniciar}>
+            Leer nuevo código QR
+          </button>
+        </div>
+      )}
       <div>
       {scanning && (
         <DynamicQrReader
