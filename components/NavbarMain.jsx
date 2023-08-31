@@ -12,8 +12,8 @@ const NavbarMain = () => {
     <div className={styles.header}>
       <div className={styles.nav}>
         <Link href="/home" className={styles.links}> 
-          <div className={styles.nav__link}>
-            <Image  src="/img/logo_blanco.png" alt="Logo Símbolo SENA Biometric Service Blanco" width={200} height={50} className={styles.nav__img} />     
+          <div>
+            <Image  src="/img/logo_blanco.png" alt="Logo Símbolo SENA Biometric Service Blanco" width={120} height={30} className={styles.nav__img} />     
           </div>
         </Link>
         <Link href="/home" className={styles.links}> 
