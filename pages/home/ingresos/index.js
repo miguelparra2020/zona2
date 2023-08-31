@@ -93,8 +93,9 @@ const IngresosPage = () => {
 
     return (
         <MainLayout>
-            <div>
-                <h1>Hola soy Ingresos Page</h1>                
+            <div className="titulo-ingresos">
+                <h1>Bienvenid@ al área de ingresos</h1>  
+                <h3>Crea un increso de manera manual</h3>
             </div>            
             {/* formulario de creación de ingreso */}
             <div>
