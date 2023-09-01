@@ -29,6 +29,17 @@ font-style: oblique;
     text-align: center;
     pointer-events: none;
 }
+.contenedor-lector{
+    width: 30rem;
+}
+.div-contenedor-lector{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
 .contenedor_filtros_asistencias{
     display: flex;
     flex-direction: column;
@@ -211,6 +222,10 @@ font-style: oblique;
 }
 
 @media (max-width: 750px) {
+    .contenedor-lector{
+        width: 90%;
+    }
+
     
     .div_fechas{
         flex-direction: column;

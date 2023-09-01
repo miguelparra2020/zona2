@@ -2,6 +2,7 @@ import  LoginLayout from '../components/layouts/LoginLayout';
 import React, { useState, useEffect } from 'react';
 import dynamic from 'next/dynamic';
 import { getUsuario, CreateIngreso, CreateSalida } from '../db/db';
+import '../styles/pages/home.css'
 
 const DynamicQrReader = dynamic(() => import('react-qr-scanner'), { ssr: false });
 
@@ -108,9 +109,9 @@ fetchUsuario();
 
   return (
     <LoginLayout>
-      <div>
-        <h1>Bienvenid@ a la Zona 1</h1>
-        <h3>Por favor escanear el código Qr de la aplicación</h3>
+      <div >
+        <h1 className='contenedor_titulo_asistencias'>Bienvenid@ a la Zona 1</h1>
+        <h3 className='contenedor_titulo_asistencias'>Por favor escanear el código Qr de la aplicación</h3>
       </div>
       {username && (
         <div>
@@ -120,14 +121,16 @@ fetchUsuario();
         </div>
       )}
       <div>
+      <div className='div-contenedor-lector'>
       {scanning && (
         <DynamicQrReader
           delay={100}
           onError={handleError}
           onScan={handleScan}
-          style={{ width: '50%' }}
+          className='contenedor-lector'
         />
       )}
+      </div>
       {username && <p> <strongn>Usuario:</strongn>  {username}</p>}
       {username && <p><strongn>Nombre:</strongn> {first_name} {last_name}</p>}
       {username && <p><strongn>Ficha:</strongn> {ficha}</p>}
