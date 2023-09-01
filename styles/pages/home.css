@@ -150,6 +150,18 @@ font-style: oblique;
     justify-content: center;
     flex-direction: column;
 }
+.contenedor_div_card{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.contenedor_botones{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin: 10px;
+}
 .div_card {
     background-color: white;
     padding: 10px;
@@ -173,6 +185,60 @@ font-style: oblique;
     1.4px 15.5px 18px -1.7px hsla(0, 0%, 60%, 0.33),
     2px 22.2px 25.7px -2px hsla(0, 0%, 60%, 0.33),
     2.8px 30.9px 35.8px -2.3px hsla(0, 0%, 60%, 0.34);
+}
+.registro_ingreso_button{
+    display: inline-block;
+    background-color: #0ed46b;
+    border-color: #0ed46b;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.registro_ingreso_button:hover{
+    background-color: #0d8042;
+}
+.registro_salida_button{
+    display: inline-block;
+    background-color: #e84e4e;
+    border-color: #e84e4e;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.registro_salida_button:hover{
+    background-color: #a53a3a;
+}
+.nuevo_button{
+    display: inline-block;
+    background-color: #007bff;
+    border-color: #007bff;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.nuevo_button:hover{
+    background-color: #0056b3;
 }
 .div_card_header{
     padding: 5px;
