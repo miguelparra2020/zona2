@@ -15,7 +15,7 @@ const IndexPage = () => {
   const [ficha, setFicha] = useState("");
   const [fecha, setFecha] = useState("");
   const [hora, setHora] = useState("");
-  const [zona, setZona] = useState("Zona 1");
+  const [zona, setZona] = useState("Zona 2");
   const [usuario, setUsuario] = useState(null);
 
   const handleScan = (data) => {
@@ -110,7 +110,7 @@ fetchUsuario();
   return (
     <LoginLayout>
       <div >
-        <h1 className='contenedor_titulo_asistencias'>Bienvenid@ a la Zona 1</h1>
+        <h1 className='contenedor_titulo_asistencias'>Bienvenid@ a la Zona 2</h1>
         <h3 className='contenedor_titulo_asistencias'>Por favor escanear el código Qr de la aplicación</h3>
       </div>
       <div className='contenedor_botones'>
